@@ -1,0 +1,91 @@
+:root {
+  /* Colour: warm canvas, white surfaces, charcoal text, orange accent.
+     Contrast on white: text 16.9:1, muted 7.0:1, accent 5.18:1 (4.72:1 on the canvas), chart line 3.58:1 (graphics). */
+  --color-bg: #f7f4ef;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f3efe9;
+  --color-border: #e9e3da;
+  --color-border-strong: #8f877d; /* control borders: 3.5:1 on white (WCAG 1.4.11) */
+  --color-text: #1f1b17;
+  --color-muted: #5f5850;
+  --color-accent: #c2410c;
+  --color-accent-hover: #9a3412;
+  --color-accent-soft: #fff1e8;
+  --color-accent-line: #e8590c;
+  --color-ink: #1d1b19;          /* the dark score card */
+  --color-on-ink: #ffffff;
+  --color-on-ink-muted: #c9c2b8;  /* 9.7:1 on ink */
+  --color-on-ink-accent: #fb923c; /* 7.6:1 on ink */
+  --color-success: #15803d;
+  --color-success-soft: #ecfdf3;
+  --color-warning: #b45309;
+  --color-warning-soft: #fff7e6;
+  --color-danger: #b91c1c;
+  --color-danger-soft: #fef2f2;
+  --color-info-soft: #f3efe9;
+  --focus-ring: 3px solid #c2410c;
+  --focus-offset: 2px;
+  --shadow-card: none;
+
+  /* Typography */
+  /* one system stack, used everywhere (nothing is downloaded) */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-12: 12px;
+  --fs-13: 13px;   /* labels, table text */
+  --fs-14: 14px;
+  --fs-body: 15px;
+  --fs-16: 16px;
+  --fs-18: 18px;   /* section headings */
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-28: 28px;   /* page titles */
+  --fs-32: 32px;
+  --fs-metric: 24px;
+  --fs-display: 32px; /* Overview title, large stats */
+  --fs-hero: 80px;    /* the Running MMR number */
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  /* Shape and size */
+  --radius: 10px;
+  --radius-control: 8px;
+  --control-h: 36px;
+  --content-max: 1200px;
+  --gutter: 32px;
+  --sidebar-w: 244px;
+  --topbar-h: 64px;
+  --card-pad: 20px;
+
+  --transition: 120ms ease-out;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --control-h: 44px;
+    --gutter: 16px;
+    --fs-hero: 64px;
+    --fs-display: 26px;
+    --fs-28: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0ms;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

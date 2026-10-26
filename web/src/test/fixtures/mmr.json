@@ -1,0 +1,5203 @@
+{
+ "comparison": {
+  "as_of": null,
+  "ranking_rule": "ranked only with medium or high evidence coverage, within the same data kind; absolute scale, so adding runners never changes anyone's MMR",
+  "rows": [
+   {
+    "estimate": {
+     "as_of_utc": "2025-12-30T22:57:39Z",
+     "best_evidence_age_days": 123.56503472222222,
+     "cap": null,
+     "informative_365d": 275,
+     "informative_90d": 73,
+     "mmr": 2425.5300159573762,
+     "setter": {
+      "activity_id": "720273",
+      "activity_type": "Run",
+      "distance_m": 5000.0,
+      "effort": "race",
+      "elapsed_s": 958.0,
+      "elevation_gain_m": 14.0,
+      "flags": [
+       "declared race effort: context only; the label does not change the score"
+      ],
+      "informative": true,
+      "points": 2515.214860714478,
+      "reasons": [],
+      "start_utc": "2025-08-29T09:24:00Z",
+      "t10_s": 1997.3643977715885
+     },
+     "setter_aged_t10_s": 2090.8061323868033,
+     "status": "high",
+     "supporting": 2,
+     "t10_display": "34:51",
+     "t10_s": 2090.8061323868033,
+     "upper_note": "a recent declared hard effort agrees within 3 %"
+    },
+    "participant": {
+     "data_kind": "synthetic",
+     "id": 3,
+     "label": "Fast short-distance (synthetic)"
+    },
+    "rank": 1
+   },
+   {
+    "estimate": {
+     "as_of_utc": "2025-12-30T15:50:45Z",
+     "best_evidence_age_days": 73.26857638888889,
+     "cap": null,
+     "informative_365d": 252,
+     "informative_90d": 72,
+     "mmr": 2158.3878348591347,
+     "setter": {
+      "activity_id": "730251",
+      "activity_type": "Run",
+      "distance_m": 42195.0,
+      "effort": "race",
+      "elapsed_s": 10788.0,
+      "elevation_gain_m": 181.0,
+      "flags": [
+       "declared race effort: context only; the label does not change the score"
+      ],
+      "informative": true,
+      "points": 2200.37225131678,
+      "reasons": [],
+      "start_utc": "2025-10-18T09:24:00Z",
+      "t10_s": 2345.1157696601226
+     },
+     "setter_aged_t10_s": 2395.850680070286,
+     "status": "low",
+     "supporting": 1,
+     "t10_display": "39:56",
+     "t10_s": 2395.850680070286,
+     "upper_note": "only one observation supports this level"
+    },
+    "participant": {
+     "data_kind": "synthetic",
+     "id": 4,
+     "label": "Endurance specialist (synthetic)"
+    },
+    "rank": null
+   },
+   {
+    "estimate": {
+     "as_of_utc": "2025-12-30T19:13:34Z",
+     "best_evidence_age_days": 13.409421296296296,
+     "cap": null,
+     "informative_365d": 214,
+     "informative_90d": 56,
+     "mmr": 1868.7062170946494,
+     "setter": {
+      "activity_id": "750213",
+      "activity_type": "Run",
+      "distance_m": 5000.0,
+      "effort": "race",
+      "elapsed_s": 1332.0,
+      "elevation_gain_m": 37.0,
+      "flags": [
+       "declared race effort: context only; the label does not change the score"
+      ],
+      "informative": true,
+      "points": 1868.7062170946494,
+      "reasons": [],
+      "start_utc": "2025-12-17T09:24:00Z",
+      "t10_s": 2777.1287868807476
+     },
+     "setter_aged_t10_s": 2777.1287868807476,
+     "status": "high",
+     "supporting": 2,
+     "t10_display": "46:17",
+     "t10_s": 2777.1287868807476,
+     "upper_note": "a recent declared hard effort agrees within 3 %"
+    },
+    "participant": {
+     "data_kind": "synthetic",
+     "id": 6,
+     "label": "Improving runner (synthetic)"
+    },
+    "rank": 2
+   },
+   {
+    "estimate": {
+     "as_of_utc": "2025-12-31T20:00:25Z",
+     "best_evidence_age_days": 48.03829861111111,
+     "cap": null,
+     "informative_365d": 222,
+     "informative_90d": 50,
+     "mmr": 1846.7400858612084,
+     "setter": {
+      "activity_id": "740191",
+      "activity_type": "Run",
+      "distance_m": 34610.0,
+      "effort": "unknown",
+      "elapsed_s": 10378.0,
+      "elevation_gain_m": 4.0,
+      "flags": [],
+      "informative": true,
+      "points": 1864.3523805692703,
+      "reasons": [],
+      "start_utc": "2025-11-13T19:05:16Z",
+      "t10_s": 2783.299689211483
+     },
+     "setter_aged_t10_s": 2808.402684670588,
+     "status": "medium",
+     "supporting": 6,
+     "t10_display": "46:48",
+     "t10_s": 2808.402684670588,
+     "upper_note": "no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it"
+    },
+    "participant": {
+     "data_kind": "synthetic",
+     "id": 5,
+     "label": "Ultra specialist (synthetic)"
+    },
+    "rank": 3
+   },
+   {
+    "estimate": {
+     "as_of_utc": "2026-01-01T06:41:45Z",
+     "best_evidence_age_days": 254.13974537037038,
+     "cap": null,
+     "informative_365d": 126,
+     "informative_90d": 57,
+     "mmr": 1731.706486588773,
+     "setter": {
+      "activity_id": "760058",
+      "activity_type": "Run",
+      "distance_m": 12460.0,
+      "effort": "unknown",
+      "elapsed_s": 3381.0,
+      "elevation_gain_m": 38.0,
+      "flags": [],
+      "informative": true,
+      "points": 1940.0692995600414,
+      "reasons": [],
+      "start_utc": "2025-04-22T03:20:31Z",
+      "t10_s": 2677.910424726881
+     },
+     "setter_aged_t10_s": 2978.023505088353,
+     "status": "low",
+     "supporting": 5,
+     "t10_display": "49:38",
+     "t10_s": 2978.023505088353,
+     "upper_note": "the best evidence is more than 180 days old"
+    },
+    "participant": {
+     "data_kind": "synthetic",
+     "id": 7,
+     "label": "Returning after inactivity (synthetic)"
+    },
+    "rank": null
+   },
+   {
+    "estimate": {
+     "as_of_utc": "2025-12-30T07:02:07Z",
+     "best_evidence_age_days": 62.90146990740741,
+     "cap": null,
+     "informative_365d": 193,
+     "informative_90d": 41,
+     "mmr": 1648.9994173323448,
+     "setter": {
+      "activity_id": "710192",
+      "activity_type": "Run",
+      "distance_m": 10000.0,
+      "effort": "race",
+      "elapsed_s": 3056.0,
+      "elevation_gain_m": 52.0,
+      "flags": [
+       "declared race effort: context only; the label does not change the score"
+      ],
+      "informative": true,
+      "points": 1681.0059663785205,
+      "reasons": [],
+      "start_utc": "2025-10-28T09:24:00Z",
+      "t10_s": 3056.0
+     },
+     "setter_aged_t10_s": 3106.273446018519,
+     "status": "low",
+     "supporting": 1,
+     "t10_display": "51:46",
+     "t10_s": 3106.273446018519,
+     "upper_note": "only one observation supports this level"
+    },
+    "participant": {
+     "data_kind": "synthetic",
+     "id": 2,
+     "label": "Consistent recreational (synthetic)"
+    },
+    "rank": null
+   },
+   {
+    "estimate": {
+     "as_of_utc": "2025-12-30T01:29:06Z",
+     "best_evidence_age_days": 14.940578703703704,
+     "cap": null,
+     "informative_365d": 134,
+     "informative_90d": 41,
+     "mmr": 1213.0926140670479,
+     "setter": {
+      "activity_id": "700128",
+      "activity_type": "Run",
+      "distance_m": 3490.0,
+      "effort": "unknown",
+      "elapsed_s": 1271.0,
+      "elevation_gain_m": 10.0,
+      "flags": [],
+      "informative": true,
+      "points": 1213.0926140670479,
+      "reasons": [],
+      "start_utc": "2025-12-15T02:54:40Z",
+      "t10_s": 3879.2752711164344
+     },
+     "setter_aged_t10_s": 3879.2752711164344,
+     "status": "medium",
+     "supporting": 3,
+     "t10_display": "1:04:39",
+     "t10_s": 3879.2752711164344,
+     "upper_note": "no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it"
+    },
+    "participant": {
+     "data_kind": "synthetic",
+     "id": 1,
+     "label": "Beginner (synthetic)"
+    },
+    "rank": 4
+   }
+  ],
+  "scale_version": "mmr-scale-v1",
+  "version": "mmr-envelope-v2"
+ },
+ "effect_best": {
+  "activity": {
+   "activity_id": "750213",
+   "activity_type": "Run",
+   "distance_m": 5000.0,
+   "effort": "race",
+   "elapsed_s": 1332.0,
+   "elevation_gain_m": 37.0,
+   "flags": [
+    "declared race effort: context only; the label does not change the score"
+   ],
+   "informative": true,
+   "points": 1868.7062170946494,
+   "reasons": [],
+   "start_utc": "2025-12-17T09:24:00Z",
+   "t10_s": 2777.1287868807476
+  },
+  "delta": 5.551782545213882,
+  "explanation": "It is better evidence than anything before it, so it raised the estimate.",
+  "with": {
+   "as_of_utc": "2025-12-17T09:24:00Z",
+   "best_evidence_age_days": 0.0,
+   "cap": null,
+   "informative_365d": 201,
+   "informative_90d": 52,
+   "mmr": 1868.7062170946494,
+   "setter": {
+    "activity_id": "750213",
+    "activity_type": "Run",
+    "distance_m": 5000.0,
+    "effort": "race",
+    "elapsed_s": 1332.0,
+    "elevation_gain_m": 37.0,
+    "flags": [
+     "declared race effort: context only; the label does not change the score"
+    ],
+    "informative": true,
+    "points": 1868.7062170946494,
+    "reasons": [],
+    "start_utc": "2025-12-17T09:24:00Z",
+    "t10_s": 2777.1287868807476
+   },
+   "setter_aged_t10_s": 2777.1287868807476,
+   "status": "high",
+   "supporting": 2,
+   "t10_display": "46:17",
+   "t10_s": 2777.1287868807476,
+   "upper_note": "a recent declared hard effort agrees within 3 %"
+  },
+  "without": {
+   "as_of_utc": "2025-12-17T09:24:00Z",
+   "best_evidence_age_days": 30.0,
+   "cap": null,
+   "informative_365d": 200,
+   "informative_90d": 51,
+   "mmr": 1863.1544345494356,
+   "setter": {
+    "activity_id": "750212",
+    "activity_type": "Run",
+    "distance_m": 10000.0,
+    "effort": "race",
+    "elapsed_s": 2785.0,
+    "elevation_gain_m": 26.0,
+    "flags": [
+     "declared race effort: context only; the label does not change the score"
+    ],
+    "informative": true,
+    "points": 1863.1544345494356,
+    "reasons": [],
+    "start_utc": "2025-11-17T09:24:00Z",
+    "t10_s": 2785.0
+   },
+   "setter_aged_t10_s": 2785.0,
+   "status": "low",
+   "supporting": 1,
+   "t10_display": "46:25",
+   "t10_s": 2785.0,
+   "upper_note": "only one observation supports this level"
+  }
+ },
+ "effect_easy": {
+  "activity": {
+   "activity_id": "750201",
+   "activity_type": "Run",
+   "distance_m": 9860.0,
+   "effort": "unknown",
+   "elapsed_s": 3228.0,
+   "elevation_gain_m": 10.0,
+   "flags": [],
+   "informative": true,
+   "points": 1544.283805758279,
+   "reasons": [],
+   "start_utc": "2025-12-30T19:13:34Z",
+   "t10_s": 3276.604295120649
+  },
+  "delta": 0.0,
+  "explanation": "Evidence that does not beat the current estimate: an easier or slower run is not read as lower ability, so MMR did not change.",
+  "with": {
+   "as_of_utc": "2025-12-30T19:13:34Z",
+   "best_evidence_age_days": 13.409421296296296,
+   "cap": null,
+   "informative_365d": 214,
+   "informative_90d": 56,
+   "mmr": 1868.7062170946494,
+   "setter": {
+    "activity_id": "750213",
+    "activity_type": "Run",
+    "distance_m": 5000.0,
+    "effort": "race",
+    "elapsed_s": 1332.0,
+    "elevation_gain_m": 37.0,
+    "flags": [
+     "declared race effort: context only; the label does not change the score"
+    ],
+    "informative": true,
+    "points": 1868.7062170946494,
+    "reasons": [],
+    "start_utc": "2025-12-17T09:24:00Z",
+    "t10_s": 2777.1287868807476
+   },
+   "setter_aged_t10_s": 2777.1287868807476,
+   "status": "high",
+   "supporting": 2,
+   "t10_display": "46:17",
+   "t10_s": 2777.1287868807476,
+   "upper_note": "a recent declared hard effort agrees within 3 %"
+  },
+  "without": {
+   "as_of_utc": "2025-12-30T19:13:34Z",
+   "best_evidence_age_days": 13.409421296296296,
+   "cap": null,
+   "informative_365d": 213,
+   "informative_90d": 55,
+   "mmr": 1868.7062170946494,
+   "setter": {
+    "activity_id": "750213",
+    "activity_type": "Run",
+    "distance_m": 5000.0,
+    "effort": "race",
+    "elapsed_s": 1332.0,
+    "elevation_gain_m": 37.0,
+    "flags": [
+     "declared race effort: context only; the label does not change the score"
+    ],
+    "informative": true,
+    "points": 1868.7062170946494,
+    "reasons": [],
+    "start_utc": "2025-12-17T09:24:00Z",
+    "t10_s": 2777.1287868807476
+   },
+   "setter_aged_t10_s": 2777.1287868807476,
+   "status": "high",
+   "supporting": 2,
+   "t10_display": "46:17",
+   "t10_s": 2777.1287868807476,
+   "upper_note": "a recent declared hard effort agrees within 3 %"
+  }
+ },
+ "explain": {
+  "activities": [
+   "750213"
+  ],
+  "after": {
+   "as_of_utc": "2025-12-17T09:24:00Z",
+   "best_evidence_age_days": 0.0,
+   "cap": null,
+   "informative_365d": 201,
+   "informative_90d": 52,
+   "mmr": 1868.7062170946494,
+   "setter": {
+    "activity_id": "750213",
+    "activity_type": "Run",
+    "distance_m": 5000.0,
+    "effort": "race",
+    "elapsed_s": 1332.0,
+    "elevation_gain_m": 37.0,
+    "flags": [
+     "declared race effort: context only; the label does not change the score"
+    ],
+    "informative": true,
+    "points": 1868.7062170946494,
+    "reasons": [],
+    "start_utc": "2025-12-17T09:24:00Z",
+    "t10_s": 2777.1287868807476
+   },
+   "setter_aged_t10_s": 2777.1287868807476,
+   "status": "high",
+   "supporting": 2,
+   "t10_display": "46:17",
+   "t10_s": 2777.1287868807476,
+   "upper_note": "a recent declared hard effort agrees within 3 %"
+  },
+  "at_utc": "2025-12-17T09:24:00Z",
+  "before": {
+   "as_of_utc": "2025-12-15T18:23:01Z",
+   "best_evidence_age_days": 28.37431712962963,
+   "cap": null,
+   "informative_365d": 200,
+   "informative_90d": 52,
+   "mmr": 1863.1544345494356,
+   "setter": {
+    "activity_id": "750212",
+    "activity_type": "Run",
+    "distance_m": 10000.0,
+    "effort": "race",
+    "elapsed_s": 2785.0,
+    "elevation_gain_m": 26.0,
+    "flags": [
+     "declared race effort: context only; the label does not change the score"
+    ],
+    "informative": true,
+    "points": 1863.1544345494356,
+    "reasons": [],
+    "start_utc": "2025-11-17T09:24:00Z",
+    "t10_s": 2785.0
+   },
+   "setter_aged_t10_s": 2785.0,
+   "status": "low",
+   "supporting": 1,
+   "t10_display": "46:25",
+   "t10_s": 2785.0,
+   "upper_note": "only one observation supports this level"
+  },
+  "delta": 5.551782545213882,
+  "explanation": [
+   "New best evidence: activity 750213 (5 km in 22:12, 10 km-equivalent 46:17).",
+   "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+  ]
+ },
+ "history": {
+  "points": [
+   {
+    "activities": [
+     "750000"
+    ],
+    "at_utc": "2025-01-05T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "First estimate: activity 750000 (9.67 km in 1:09:59) gives a 10 km-equivalent of 1:12:31."
+    ],
+    "mmr": 987.9678559438765,
+    "setter_activity_id": "750000",
+    "status": "low",
+    "t10_s": 4351.047376139208
+   },
+   {
+    "activities": [
+     "750001"
+    ],
+    "at_utc": "2025-01-10T21:01:46Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750001 (5.8 km in 39:19, 10 km-equivalent 1:10:02)."
+    ],
+    "mmr": 1056.1673358573023,
+    "setter_activity_id": "750001",
+    "status": "low",
+    "t10_s": 4202.369808957818
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-01-12T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1056.1673358573023,
+    "setter_activity_id": "750001",
+    "status": "low",
+    "t10_s": 4202.369808957818
+   },
+   {
+    "activities": [
+     "750002"
+    ],
+    "at_utc": "2025-01-14T06:52:36Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750002 (7.39 km in 47:30, 10 km-equivalent 1:05:27)."
+    ],
+    "mmr": 1189.0135989808666,
+    "setter_activity_id": "750002",
+    "status": "low",
+    "t10_s": 3927.1885720013915
+   },
+   {
+    "activities": [
+     "750003"
+    ],
+    "at_utc": "2025-01-15T02:42:08Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750003 (8.13 km in 47:55, 10 km-equivalent 59:40)."
+    ],
+    "mmr": 1370.311734987447,
+    "setter_activity_id": "750003",
+    "status": "low",
+    "t10_s": 3580.4850993679333
+   },
+   {
+    "activities": [
+     "750004"
+    ],
+    "at_utc": "2025-01-17T07:15:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1370.311734987447,
+    "setter_activity_id": "750003",
+    "status": "low",
+    "t10_s": 3580.4850993679333
+   },
+   {
+    "activities": [
+     "750005"
+    ],
+    "at_utc": "2025-01-17T13:02:16Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1370.311734987447,
+    "setter_activity_id": "750003",
+    "status": "low",
+    "t10_s": 3580.4850993679333
+   },
+   {
+    "activities": [
+     "750006"
+    ],
+    "at_utc": "2025-01-17T15:59:33Z",
+    "changed": true,
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: low \u2192 medium (no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it)."
+    ],
+    "mmr": 1370.311734987447,
+    "setter_activity_id": "750003",
+    "status": "medium",
+    "t10_s": 3580.4850993679333
+   },
+   {
+    "activities": [
+     "750007"
+    ],
+    "at_utc": "2025-01-18T23:57:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1370.311734987447,
+    "setter_activity_id": "750003",
+    "status": "medium",
+    "t10_s": 3580.4850993679333
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-01-19T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1370.311734987447,
+    "setter_activity_id": "750003",
+    "status": "medium",
+    "t10_s": 3580.4850993679333
+   },
+   {
+    "activities": [
+     "750202"
+    ],
+    "at_utc": "2025-01-21T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750202 (10 km in 54:56, 10 km-equivalent 54:56).",
+     "Evidence coverage: medium \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750008"
+    ],
+    "at_utc": "2025-01-22T08:10:05Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750009"
+    ],
+    "at_utc": "2025-01-23T10:10:43Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750010"
+    ],
+    "at_utc": "2025-01-23T10:28:05Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750011"
+    ],
+    "at_utc": "2025-01-24T23:44:50Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750012"
+    ],
+    "at_utc": "2025-01-25T22:20:31Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-01-26T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750013"
+    ],
+    "at_utc": "2025-01-26T17:58:50Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750014"
+    ],
+    "at_utc": "2025-01-30T15:28:24Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750015"
+    ],
+    "at_utc": "2025-02-02T04:15:58Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-02-02T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750016"
+    ],
+    "at_utc": "2025-02-03T23:03:33Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750017"
+    ],
+    "at_utc": "2025-02-06T02:11:51Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750018"
+    ],
+    "at_utc": "2025-02-08T10:41:17Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-02-09T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750019"
+    ],
+    "at_utc": "2025-02-09T08:19:00Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750020"
+    ],
+    "at_utc": "2025-02-09T08:34:32Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750021"
+    ],
+    "at_utc": "2025-02-10T16:02:30Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750022"
+    ],
+    "at_utc": "2025-02-11T18:41:03Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-02-16T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750023"
+    ],
+    "at_utc": "2025-02-19T04:51:11Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750024"
+    ],
+    "at_utc": "2025-02-19T11:14:01Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1532.706676879727,
+    "setter_activity_id": "750202",
+    "status": "low",
+    "t10_s": 3296.0
+   },
+   {
+    "activities": [
+     "750203"
+    ],
+    "at_utc": "2025-02-20T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750203 (5 km in 26:04, 10 km-equivalent 54:21).",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750025"
+    ],
+    "at_utc": "2025-02-21T07:22:57Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750026"
+    ],
+    "at_utc": "2025-02-21T18:46:41Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750027"
+    ],
+    "at_utc": "2025-02-21T21:31:29Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750028"
+    ],
+    "at_utc": "2025-02-22T00:00:26Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750029"
+    ],
+    "at_utc": "2025-02-23T05:28:27Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-02-23T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750030"
+    ],
+    "at_utc": "2025-02-23T09:15:42Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750031"
+    ],
+    "at_utc": "2025-02-26T12:12:29Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-03-02T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750032"
+    ],
+    "at_utc": "2025-03-04T21:28:50Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-03-09T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750033"
+    ],
+    "at_utc": "2025-03-10T18:12:41Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750034"
+    ],
+    "at_utc": "2025-03-14T17:46:25Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750035"
+    ],
+    "at_utc": "2025-03-15T03:57:46Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-03-16T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750036"
+    ],
+    "at_utc": "2025-03-17T00:26:42Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750037"
+    ],
+    "at_utc": "2025-03-17T16:05:06Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750038"
+    ],
+    "at_utc": "2025-03-19T21:30:49Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750039"
+    ],
+    "at_utc": "2025-03-20T03:16:47Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750204"
+    ],
+    "at_utc": "2025-03-22T09:24:00Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1553.7482464436448,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.8328999110277
+   },
+   {
+    "activities": [
+     "750040"
+    ],
+    "at_utc": "2025-03-22T10:24:00Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 30 days old, so it counts 0.00 % slower than recorded."
+    ],
+    "mmr": 1553.707381042228,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.9008339297757
+   },
+   {
+    "activities": [
+     "750041"
+    ],
+    "at_utc": "2025-03-22T10:30:39Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 30 days old, so it counts 0.00 % slower than recorded."
+    ],
+    "mmr": 1553.7028518459788,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3260.90836328352
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-03-23T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 31 days old, so it counts 0.05 % slower than recorded."
+    ],
+    "mmr": 1552.847838411381,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3262.330052460872
+   },
+   {
+    "activities": [
+     "750042"
+    ],
+    "at_utc": "2025-03-26T00:13:03Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 34 days old, so it counts 0.18 % slower than recorded."
+    ],
+    "mmr": 1550.2035821476975,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3266.730761583695
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-03-30T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 38 days old, so it counts 0.40 % slower than recorded."
+    ],
+    "mmr": 1545.997505770193,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3273.742967610561
+   },
+   {
+    "activities": [
+     "750043"
+    ],
+    "at_utc": "2025-03-31T19:02:36Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 39 days old, so it counts 0.47 % slower than recorded."
+    ],
+    "mmr": 1544.548751063312,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3276.161758348089
+   },
+   {
+    "activities": [
+     "750044"
+    ],
+    "at_utc": "2025-04-03T15:59:43Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 42 days old, so it counts 0.61 % slower than recorded."
+    ],
+    "mmr": 1541.7461600117979,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3280.8459410346986
+   },
+   {
+    "activities": [
+     "750045"
+    ],
+    "at_utc": "2025-04-03T20:32:54Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 42 days old, so it counts 0.62 % slower than recorded."
+    ],
+    "mmr": 1541.561239333393,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3281.155248396171
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-04-06T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 45 days old, so it counts 0.75 % slower than recorded."
+    ],
+    "mmr": 1539.1710132354183,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3285.1558827602494
+   },
+   {
+    "activities": [
+     "750046"
+    ],
+    "at_utc": "2025-04-08T16:48:15Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 47 days old, so it counts 0.87 % slower than recorded."
+    ],
+    "mmr": 1536.8454471062544,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3289.0529743574193
+   },
+   {
+    "activities": [
+     "750047"
+    ],
+    "at_utc": "2025-04-10T16:59:44Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 49 days old, so it counts 0.97 % slower than recorded."
+    ],
+    "mmr": 1534.8939345095087,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3292.3268090736965
+   },
+   {
+    "activities": [
+     "750048"
+    ],
+    "at_utc": "2025-04-10T20:17:47Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 49 days old, so it counts 0.97 % slower than recorded."
+    ],
+    "mmr": 1534.7603381247636,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3292.5510479472473
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-04-13T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 52 days old, so it counts 1.10 % slower than recorded."
+    ],
+    "mmr": 1532.368195448616,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3296.568797909938
+   },
+   {
+    "activities": [
+     "750049"
+    ],
+    "at_utc": "2025-04-14T00:02:11Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 53 days old, so it counts 1.13 % slower than recorded."
+    ],
+    "mmr": 1531.6973698234153,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3297.6963705272315
+   },
+   {
+    "activities": [
+     "750050"
+    ],
+    "at_utc": "2025-04-18T21:40:21Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 58 days old, so it counts 1.38 % slower than recorded."
+    ],
+    "mmr": 1526.9495619607537,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3305.687864304913
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-04-20T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 59 days old, so it counts 1.45 % slower than recorded."
+    ],
+    "mmr": 1525.5888887658252,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3307.9817130596266
+   },
+   {
+    "activities": [
+     "750051"
+    ],
+    "at_utc": "2025-04-21T06:46:35Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750203 is 60 days old, so it counts 1.49 % slower than recorded."
+    ],
+    "mmr": 1524.6489785864003,
+    "setter_activity_id": "750203",
+    "status": "high",
+    "t10_s": 3309.567160963283
+   },
+   {
+    "activities": [
+     "750205"
+    ],
+    "at_utc": "2025-04-21T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750205 (5 km in 25:25, 10 km-equivalent 53:00).",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750052"
+    ],
+    "at_utc": "2025-04-23T23:18:52Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750053"
+    ],
+    "at_utc": "2025-04-26T07:04:59Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750054"
+    ],
+    "at_utc": "2025-04-26T09:53:50Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-04-27T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750055"
+    ],
+    "at_utc": "2025-04-27T13:46:59Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750056"
+    ],
+    "at_utc": "2025-04-27T14:52:01Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750057"
+    ],
+    "at_utc": "2025-04-29T17:20:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750058"
+    ],
+    "at_utc": "2025-05-01T21:58:21Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750059"
+    ],
+    "at_utc": "2025-05-02T07:33:47Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750060"
+    ],
+    "at_utc": "2025-05-03T22:12:54Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-05-04T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750061"
+    ],
+    "at_utc": "2025-05-07T02:53:19Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750062"
+    ],
+    "at_utc": "2025-05-08T04:25:12Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750063"
+    ],
+    "at_utc": "2025-05-08T16:11:20Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750064"
+    ],
+    "at_utc": "2025-05-09T14:01:16Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-05-11T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750065"
+    ],
+    "at_utc": "2025-05-11T17:23:36Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750066"
+    ],
+    "at_utc": "2025-05-11T17:57:02Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750067"
+    ],
+    "at_utc": "2025-05-14T13:35:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750068"
+    ],
+    "at_utc": "2025-05-15T00:43:32Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750069"
+    ],
+    "at_utc": "2025-05-15T11:54:57Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-05-18T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750070"
+    ],
+    "at_utc": "2025-05-20T21:23:30Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "low",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750206"
+    ],
+    "at_utc": "2025-05-21T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1603.2820072109232,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3179.5205705654203
+   },
+   {
+    "activities": [
+     "750071"
+    ],
+    "at_utc": "2025-05-21T11:49:15Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 30 days old, so it counts 0.01 % slower than recorded."
+    ],
+    "mmr": 1603.1830803491125,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3179.6809265941965
+   },
+   {
+    "activities": [
+     "750072"
+    ],
+    "at_utc": "2025-05-22T00:50:55Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 31 days old, so it counts 0.03 % slower than recorded."
+    ],
+    "mmr": 1602.6507885125543,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3180.5438867490548
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-05-25T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 34 days old, so it counts 0.20 % slower than recorded."
+    ],
+    "mmr": 1599.4428124582537,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3185.7496708832336
+   },
+   {
+    "activities": [
+     "750073"
+    ],
+    "at_utc": "2025-05-26T17:45:48Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 35 days old, so it counts 0.27 % slower than recorded."
+    ],
+    "mmr": 1598.043335030669,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3188.0233592912473
+   },
+   {
+    "activities": [
+     "750074"
+    ],
+    "at_utc": "2025-05-26T18:30:53Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 35 days old, so it counts 0.27 % slower than recorded."
+    ],
+    "mmr": 1598.0127110377337,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3188.073131300179
+   },
+   {
+    "activities": [
+     "750075"
+    ],
+    "at_utc": "2025-05-27T08:36:32Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 36 days old, so it counts 0.30 % slower than recorded."
+    ],
+    "mmr": 1597.4383704898412,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3189.006729067713
+   },
+   {
+    "activities": [
+     "750076"
+    ],
+    "at_utc": "2025-05-27T11:04:01Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 36 days old, so it counts 0.30 % slower than recorded."
+    ],
+    "mmr": 1597.3382213775158,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3189.1695506969313
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-06-01T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 41 days old, so it counts 0.55 % slower than recorded."
+    ],
+    "mmr": 1592.6027173644545,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3196.877992880212
+   },
+   {
+    "activities": [
+     "750077"
+    ],
+    "at_utc": "2025-06-01T20:42:39Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 41 days old, so it counts 0.57 % slower than recorded."
+    ],
+    "mmr": 1592.0633447482508,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3197.757163437979
+   },
+   {
+    "activities": [
+     "750078"
+    ],
+    "at_utc": "2025-06-02T05:08:08Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 42 days old, so it counts 0.59 % slower than recorded."
+    ],
+    "mmr": 1591.7210547969698,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3198.315217138122
+   },
+   {
+    "activities": [
+     "750079"
+    ],
+    "at_utc": "2025-06-04T18:55:29Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 44 days old, so it counts 0.72 % slower than recorded."
+    ],
+    "mmr": 1589.212432554799,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3202.4081322725965
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-06-08T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 48 days old, so it counts 0.90 % slower than recorded."
+    ],
+    "mmr": 1585.786391297696,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3208.006314877191
+   },
+   {
+    "activities": [
+     "750080"
+    ],
+    "at_utc": "2025-06-10T02:51:00Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 50 days old, so it counts 0.99 % slower than recorded."
+    ],
+    "mmr": 1584.0288780640258,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3210.8819041932156
+   },
+   {
+    "activities": [
+     "750081"
+    ],
+    "at_utc": "2025-06-10T11:13:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 50 days old, so it counts 1.00 % slower than recorded."
+    ],
+    "mmr": 1583.6901337395757,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3211.436443492728
+   },
+   {
+    "activities": [
+     "750082"
+    ],
+    "at_utc": "2025-06-11T16:33:52Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 51 days old, so it counts 1.06 % slower than recorded."
+    ],
+    "mmr": 1582.503293031661,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3213.3801094415194
+   },
+   {
+    "activities": [
+     "750083"
+    ],
+    "at_utc": "2025-06-12T00:09:26Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 52 days old, so it counts 1.08 % slower than recorded."
+    ],
+    "mmr": 1582.1963014010519,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3213.883055131773
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-06-15T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 55 days old, so it counts 1.25 % slower than recorded."
+    ],
+    "mmr": 1578.993669637234,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3219.13463687417
+   },
+   {
+    "activities": [
+     "750084"
+    ],
+    "at_utc": "2025-06-16T22:00:30Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750205 is 57 days old, so it counts 1.33 % slower than recorded."
+    ],
+    "mmr": 1577.4374884977901,
+    "setter_activity_id": "750205",
+    "status": "high",
+    "t10_s": 3221.6895141326436
+   },
+   {
+    "activities": [
+     "750207"
+    ],
+    "at_utc": "2025-06-20T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750207 (5 km in 24:22, 10 km-equivalent 50:48).",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750085"
+    ],
+    "at_utc": "2025-06-20T17:14:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750086"
+    ],
+    "at_utc": "2025-06-21T00:45:42Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-06-22T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750087"
+    ],
+    "at_utc": "2025-06-23T22:05:10Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750088"
+    ],
+    "at_utc": "2025-06-25T11:56:40Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750089"
+    ],
+    "at_utc": "2025-06-27T12:56:27Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750090"
+    ],
+    "at_utc": "2025-06-28T07:00:30Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750091"
+    ],
+    "at_utc": "2025-06-28T22:09:25Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-06-29T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750092"
+    ],
+    "at_utc": "2025-06-30T23:01:26Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750093"
+    ],
+    "at_utc": "2025-07-03T21:57:37Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750094"
+    ],
+    "at_utc": "2025-07-04T15:23:32Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750095"
+    ],
+    "at_utc": "2025-07-04T22:05:40Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-07-06T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750096"
+    ],
+    "at_utc": "2025-07-08T02:16:19Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750097"
+    ],
+    "at_utc": "2025-07-09T09:48:32Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750098"
+    ],
+    "at_utc": "2025-07-10T20:44:09Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750099"
+    ],
+    "at_utc": "2025-07-12T14:03:56Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750100"
+    ],
+    "at_utc": "2025-07-12T19:28:09Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-07-13T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750101"
+    ],
+    "at_utc": "2025-07-14T19:31:50Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750102"
+    ],
+    "at_utc": "2025-07-15T11:57:34Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750103"
+    ],
+    "at_utc": "2025-07-17T23:18:58Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750104"
+    ],
+    "at_utc": "2025-07-19T12:50:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-07-20T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750208"
+    ],
+    "at_utc": "2025-07-20T09:24:00Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1686.0383450112497,
+    "setter_activity_id": "750207",
+    "status": "low",
+    "t10_s": 3048.169884699439
+   },
+   {
+    "activities": [
+     "750105"
+    ],
+    "at_utc": "2025-07-22T21:58:59Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 33 days old, so it counts 0.13 % slower than recorded.",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1683.5641294215693,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3052.0171231466793
+   },
+   {
+    "activities": [
+     "750106"
+    ],
+    "at_utc": "2025-07-25T04:02:07Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 35 days old, so it counts 0.24 % slower than recorded."
+    ],
+    "mmr": 1681.3592647206306,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3055.449630562905
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-07-27T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 37 days old, so it counts 0.35 % slower than recorded."
+    ],
+    "mmr": 1679.264759809821,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3058.713906519696
+   },
+   {
+    "activities": [
+     "750107"
+    ],
+    "at_utc": "2025-07-28T21:49:09Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 39 days old, so it counts 0.43 % slower than recorded."
+    ],
+    "mmr": 1677.7023245599128,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3061.1512252762873
+   },
+   {
+    "activities": [
+     "750108"
+    ],
+    "at_utc": "2025-07-29T21:25:39Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 40 days old, so it counts 0.48 % slower than recorded."
+    ],
+    "mmr": 1676.74187695557,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3062.650437999091
+   },
+   {
+    "activities": [
+     "750109"
+    ],
+    "at_utc": "2025-07-30T14:32:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 40 days old, so it counts 0.51 % slower than recorded."
+    ],
+    "mmr": 1676.0460581509742,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3063.737036475524
+   },
+   {
+    "activities": [
+     "750110"
+    ],
+    "at_utc": "2025-07-31T01:43:23Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 41 days old, so it counts 0.53 % slower than recorded."
+    ],
+    "mmr": 1675.5913603638865,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3064.4473059223264
+   },
+   {
+    "activities": [
+     "750111"
+    ],
+    "at_utc": "2025-07-31T17:29:38Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 41 days old, so it counts 0.57 % slower than recorded."
+    ],
+    "mmr": 1674.9504002742763,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3065.4488096561445
+   },
+   {
+    "activities": [
+     "750112"
+    ],
+    "at_utc": "2025-08-01T00:06:14Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 42 days old, so it counts 0.58 % slower than recorded."
+    ],
+    "mmr": 1674.6818181405215,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3065.8685680506837
+   },
+   {
+    "activities": [
+     "750113"
+    ],
+    "at_utc": "2025-08-02T01:55:01Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 43 days old, so it counts 0.63 % slower than recorded."
+    ],
+    "mmr": 1673.6333161275072,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3067.507788437694
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-08-03T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 44 days old, so it counts 0.70 % slower than recorded."
+    ],
+    "mmr": 1672.434871709831,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3069.3825011161443
+   },
+   {
+    "activities": [
+     "750114"
+    ],
+    "at_utc": "2025-08-04T05:02:31Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 45 days old, so it counts 0.74 % slower than recorded."
+    ],
+    "mmr": 1671.558319558099,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3070.7544068825955
+   },
+   {
+    "activities": [
+     "750115"
+    ],
+    "at_utc": "2025-08-04T23:07:25Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 46 days old, so it counts 0.78 % slower than recorded."
+    ],
+    "mmr": 1670.8249689594873,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3071.902656711731
+   },
+   {
+    "activities": [
+     "750116"
+    ],
+    "at_utc": "2025-08-06T12:28:45Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 47 days old, so it counts 0.86 % slower than recorded."
+    ],
+    "mmr": 1669.3107817336402,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3074.274866700703
+   },
+   {
+    "activities": [
+     "750117"
+    ],
+    "at_utc": "2025-08-06T14:13:35Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 47 days old, so it counts 0.86 % slower than recorded."
+    ],
+    "mmr": 1669.2399876321244,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3074.385821495696
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-08-10T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 51 days old, so it counts 1.05 % slower than recorded."
+    ],
+    "mmr": 1665.6286818749234,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3080.0510957125925
+   },
+   {
+    "activities": [
+     "750118"
+    ],
+    "at_utc": "2025-08-10T23:08:03Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 52 days old, so it counts 1.08 % slower than recorded."
+    ],
+    "mmr": 1664.9940006422269,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3081.0478366809657
+   },
+   {
+    "activities": [
+     "750119"
+    ],
+    "at_utc": "2025-08-10T23:41:57Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 52 days old, so it counts 1.08 % slower than recorded."
+    ],
+    "mmr": 1664.9711579683708,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3081.0837161806503
+   },
+   {
+    "activities": [
+     "750120"
+    ],
+    "at_utc": "2025-08-11T03:51:29Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 52 days old, so it counts 1.09 % slower than recorded."
+    ],
+    "mmr": 1664.8030243081978,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3081.347820344503
+   },
+   {
+    "activities": [
+     "750121"
+    ],
+    "at_utc": "2025-08-13T00:04:14Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 54 days old, so it counts 1.18 % slower than recorded."
+    ],
+    "mmr": 1663.0165119458009,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3084.1554705742383
+   },
+   {
+    "activities": [
+     "750122"
+    ],
+    "at_utc": "2025-08-14T16:31:04Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 55 days old, so it counts 1.26 % slower than recorded."
+    ],
+    "mmr": 1661.3835685964398,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3086.7240123387696
+   },
+   {
+    "activities": [
+     "750123"
+    ],
+    "at_utc": "2025-08-16T06:46:31Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 57 days old, so it counts 1.34 % slower than recorded."
+    ],
+    "mmr": 1659.8402791287817,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3089.1534989921843
+   },
+   {
+    "activities": [
+     "750124"
+    ],
+    "at_utc": "2025-08-16T08:17:37Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 57 days old, so it counts 1.35 % slower than recorded."
+    ],
+    "mmr": 1659.7790553231691,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3089.249918532634
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-08-17T07:26:18Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 58 days old, so it counts 1.40 % slower than recorded."
+    ],
+    "mmr": 1658.846026417668,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3090.7196903090407
+   },
+   {
+    "activities": [
+     "750125"
+    ],
+    "at_utc": "2025-08-18T16:44:37Z",
+    "changed": true,
+    "explanation": [
+     "Recency assumption: evidence from activity 750207 is 59 days old, so it counts 1.47 % slower than recorded."
+    ],
+    "mmr": 1657.5041752474542,
+    "setter_activity_id": "750207",
+    "status": "high",
+    "t10_s": 3092.834693324119
+   },
+   {
+    "activities": [
+     "750209"
+    ],
+    "at_utc": "2025-08-19T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750209 (5 km in 23:58, 10 km-equivalent 49:58).",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750126"
+    ],
+    "at_utc": "2025-08-19T16:54:06Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750127"
+    ],
+    "at_utc": "2025-08-20T03:58:49Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750128"
+    ],
+    "at_utc": "2025-08-20T12:11:36Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750129"
+    ],
+    "at_utc": "2025-08-22T02:39:50Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-08-24T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750130"
+    ],
+    "at_utc": "2025-08-26T21:05:01Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750131"
+    ],
+    "at_utc": "2025-08-30T12:49:14Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-08-31T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750132"
+    ],
+    "at_utc": "2025-09-02T18:52:06Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750133"
+    ],
+    "at_utc": "2025-09-02T19:23:49Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750134"
+    ],
+    "at_utc": "2025-09-03T02:52:13Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750135"
+    ],
+    "at_utc": "2025-09-03T16:58:09Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-09-07T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750136"
+    ],
+    "at_utc": "2025-09-10T10:42:20Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750137"
+    ],
+    "at_utc": "2025-09-12T11:48:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750138"
+    ],
+    "at_utc": "2025-09-13T14:49:37Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750139"
+    ],
+    "at_utc": "2025-09-13T16:41:30Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-09-14T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "low",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750140"
+    ],
+    "at_utc": "2025-09-17T18:30:09Z",
+    "changed": true,
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1718.5062813115792,
+    "setter_activity_id": "750209",
+    "status": "high",
+    "t10_s": 2998.1315281790653
+   },
+   {
+    "activities": [
+     "750210"
+    ],
+    "at_utc": "2025-09-18T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750210 (10 km in 48:36, 10 km-equivalent 48:36)."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "high",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750141"
+    ],
+    "at_utc": "2025-09-19T06:11:44Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "high",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750142"
+    ],
+    "at_utc": "2025-09-19T08:49:43Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "high",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750143"
+    ],
+    "at_utc": "2025-09-19T10:17:49Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "high",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-09-21T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "high",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750144"
+    ],
+    "at_utc": "2025-09-26T04:00:05Z",
+    "changed": true,
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750145"
+    ],
+    "at_utc": "2025-09-27T11:22:26Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750146"
+    ],
+    "at_utc": "2025-09-27T22:39:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750147"
+    ],
+    "at_utc": "2025-09-28T06:48:54Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-09-28T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750148"
+    ],
+    "at_utc": "2025-09-30T00:22:21Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750149"
+    ],
+    "at_utc": "2025-10-04T17:26:05Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750150"
+    ],
+    "at_utc": "2025-10-05T04:03:23Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-10-05T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750151"
+    ],
+    "at_utc": "2025-10-06T11:13:34Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750152"
+    ],
+    "at_utc": "2025-10-07T02:08:14Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750153"
+    ],
+    "at_utc": "2025-10-07T12:29:11Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750154"
+    ],
+    "at_utc": "2025-10-10T11:49:33Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-10-12T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750155"
+    ],
+    "at_utc": "2025-10-14T12:24:12Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750156"
+    ],
+    "at_utc": "2025-10-15T11:10:26Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750157"
+    ],
+    "at_utc": "2025-10-16T22:20:27Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1772.9914590985734,
+    "setter_activity_id": "750210",
+    "status": "low",
+    "t10_s": 2916.0
+   },
+   {
+    "activities": [
+     "750211"
+    ],
+    "at_utc": "2025-10-18T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750211 (5 km in 22:58, 10 km-equivalent 47:53).",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-10-19T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750158"
+    ],
+    "at_utc": "2025-10-19T11:23:46Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750159"
+    ],
+    "at_utc": "2025-10-20T16:52:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750160"
+    ],
+    "at_utc": "2025-10-21T19:50:52Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750161"
+    ],
+    "at_utc": "2025-10-22T16:55:25Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750162"
+    ],
+    "at_utc": "2025-10-22T22:26:06Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750163"
+    ],
+    "at_utc": "2025-10-25T14:49:27Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-10-26T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750164"
+    ],
+    "at_utc": "2025-10-26T16:50:31Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750165"
+    ],
+    "at_utc": "2025-10-27T23:02:09Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750166"
+    ],
+    "at_utc": "2025-10-31T00:40:28Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-11-02T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750167"
+    ],
+    "at_utc": "2025-11-04T00:58:00Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750168"
+    ],
+    "at_utc": "2025-11-05T15:05:08Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-11-09T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750169"
+    ],
+    "at_utc": "2025-11-09T23:13:23Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750170"
+    ],
+    "at_utc": "2025-11-10T06:57:22Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750171"
+    ],
+    "at_utc": "2025-11-10T16:33:05Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750172"
+    ],
+    "at_utc": "2025-11-12T05:15:12Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750173"
+    ],
+    "at_utc": "2025-11-12T06:14:25Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750174"
+    ],
+    "at_utc": "2025-11-16T02:56:47Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-11-16T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "high",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750175"
+    ],
+    "at_utc": "2025-11-17T05:47:18Z",
+    "changed": true,
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1802.1081258342851,
+    "setter_activity_id": "750211",
+    "status": "low",
+    "t10_s": 2873.0356368781304
+   },
+   {
+    "activities": [
+     "750212"
+    ],
+    "at_utc": "2025-11-17T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750212 (10 km in 46:25, 10 km-equivalent 46:25)."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750176"
+    ],
+    "at_utc": "2025-11-20T17:52:17Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750177"
+    ],
+    "at_utc": "2025-11-21T03:00:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750178"
+    ],
+    "at_utc": "2025-11-21T17:53:58Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750179"
+    ],
+    "at_utc": "2025-11-22T12:33:35Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-11-23T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750180"
+    ],
+    "at_utc": "2025-11-23T14:41:36Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750181"
+    ],
+    "at_utc": "2025-11-24T21:48:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750182"
+    ],
+    "at_utc": "2025-11-25T03:54:30Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-11-30T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750183"
+    ],
+    "at_utc": "2025-12-01T14:46:03Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750184"
+    ],
+    "at_utc": "2025-12-02T04:03:33Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750185"
+    ],
+    "at_utc": "2025-12-03T12:52:15Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-12-07T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750186"
+    ],
+    "at_utc": "2025-12-13T15:38:06Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750187"
+    ],
+    "at_utc": "2025-12-14T05:17:42Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-12-14T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750188"
+    ],
+    "at_utc": "2025-12-15T18:23:01Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1863.1544345494356,
+    "setter_activity_id": "750212",
+    "status": "low",
+    "t10_s": 2785.0
+   },
+   {
+    "activities": [
+     "750213"
+    ],
+    "at_utc": "2025-12-17T09:24:00Z",
+    "changed": true,
+    "explanation": [
+     "New best evidence: activity 750213 (5 km in 22:12, 10 km-equivalent 46:17).",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750189"
+    ],
+    "at_utc": "2025-12-17T19:29:30Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750190"
+    ],
+    "at_utc": "2025-12-18T02:41:06Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750191"
+    ],
+    "at_utc": "2025-12-18T06:21:24Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750192"
+    ],
+    "at_utc": "2025-12-18T07:44:20Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750193"
+    ],
+    "at_utc": "2025-12-18T22:46:47Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-12-21T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750194"
+    ],
+    "at_utc": "2025-12-22T02:03:29Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750195"
+    ],
+    "at_utc": "2025-12-22T21:47:02Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750196"
+    ],
+    "at_utc": "2025-12-24T08:57:39Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750197"
+    ],
+    "at_utc": "2025-12-25T04:16:13Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750198"
+    ],
+    "at_utc": "2025-12-25T18:23:21Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750199"
+    ],
+    "at_utc": "2025-12-27T13:39:26Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750200"
+    ],
+    "at_utc": "2025-12-27T21:15:56Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-12-28T07:26:18Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   },
+   {
+    "activities": [
+     "750201"
+    ],
+    "at_utc": "2025-12-30T19:13:34Z",
+    "changed": false,
+    "explanation": [
+     "No change: no new evidence beats the current estimate."
+    ],
+    "mmr": 1868.7062170946494,
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476
+   }
+  ],
+  "reconstructed": true,
+  "scale_version": "mmr-scale-v1",
+  "version": "mmr-envelope-v2"
+ },
+ "insufficient": {
+  "bands": [
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": true,
+    "count": 0,
+    "label": "3\u20137 km"
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": true,
+    "count": 0,
+    "label": "7\u201315 km"
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": true,
+    "count": 0,
+    "label": "15\u201330 km"
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": true,
+    "count": 0,
+    "label": "30\u201342.5 km"
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": false,
+    "count": 0,
+    "label": "over 42.5 km (ultra; not converted)",
+    "longest_m": null
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": false,
+    "count": 0,
+    "label": "under 3 km (not converted)",
+    "longest_m": null
+   }
+  ],
+  "estimate": {
+   "as_of_utc": "2024-06-01T23:59:59Z",
+   "best_evidence_age_days": null,
+   "cap": null,
+   "informative_365d": 0,
+   "informative_90d": 0,
+   "mmr": null,
+   "setter": null,
+   "setter_aged_t10_s": null,
+   "status": "insufficient evidence",
+   "supporting": 0,
+   "t10_display": null,
+   "t10_s": null,
+   "upper_note": "no informative run in the last 365 days"
+  },
+  "participant": {
+   "activity_count": 214,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-05T07:26:18Z",
+   "id": 6,
+   "label": "Improving runner (synthetic)",
+   "last_activity_utc": "2025-12-30T19:13:34Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  "quality": {
+   "activities": 214,
+   "by_type": [
+    {
+     "count": 214,
+     "type": "Run"
+    }
+   ],
+   "declared_efforts": 12,
+   "first_utc": "2025-01-05T07:26:18Z",
+   "hilly": 33,
+   "informative": 214,
+   "last_utc": "2025-12-30T19:13:34Z",
+   "missing": {
+    "elevation": 0,
+    "heart_rate": 47,
+    "moving_time": 0,
+    "perceived_exertion": 214
+   },
+   "not_informative": [],
+   "rows_imported": 214,
+   "rows_rejected": 0
+  },
+  "recent_changes": [],
+  "scale_version": "mmr-scale-v1",
+  "snapshots": [
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1281"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1267"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1248"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1230"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1214"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1192"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1171"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1156"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1136"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1123"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1107"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1089"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "import 6"
+   }
+  ],
+  "version": "mmr-envelope-v2",
+  "volume": {
+   "active_weeks_of_last_12": 0,
+   "km_last_28d": 0.0,
+   "runs_last_28d": 0
+  }
+ },
+ "method": {
+  "limitations": [
+   "A runner who never runs hard is usually under-estimated; evidence coverage (a heuristic label) shows how thin the evidence is. Noisy GPS distance, downhill courses and short fast segments can over-estimate.",
+   "Runs over 42.5 km (ultras) and under 3 km do not contribute to MMR at all; they are shown as distance evidence only.",
+   "Riegel's single exponent fits some runners better than others; endurance types convert optimistically from long runs and speed types from short ones.",
+   "No elevation adjustment: summary ascent does not describe the route. Hilly runs are flagged; net-downhill courses cannot be detected and may overstate.",
+   "Heart rate and perceived exertion are displayed only. GPS errors move the estimate about one-for-one.",
+   "The recency rate, grace period and 365-day window are assumptions, not measured detraining.",
+   "Not validated against real race results; the points scale is a convention."
+  ],
+  "meaning": [
+   "Running MMR estimates your current running ability from your own activities. No opponents or races needed.",
+   "Ability is expressed as a 10 km-equivalent time (Riegel conversion, k = 1.06), using Run activities of 3 to 42.5 km only. Longer and shorter runs are kept and shown as distance-specific evidence.",
+   "Effort is usually unknown, so no single run is read as your maximum and an easier run never lowers MMR. The estimate is your best converted evidence in the last 365 days; the conversion is itself an estimate.",
+   "Older evidence counts gradually slower (a documented recency assumption: 1.5 % per 30 days after 30 days).",
+   "Effort labels (easy, hard, race) are context only: changing a label never changes MMR (mmr-envelope-v2; the v1 rule that let a hard/race label lower older evidence was removed on 2026-10-22). A recent hard or race label that agrees with the estimate can raise the evidence-coverage label from medium to high.",
+   "Points: 3000 \u00d7 ln(7200 s / T10) / ln(7200 / 1560). 10 km in 2:00:00 = 0, 1:00:00 \u2248 1360, 50:00 \u2248 1717, 40:00 \u2248 2155, 30:00 \u2248 2719, 26:00 = 3000. A fixed mapping (about 20 points per 1 % of speed), never rescaled by who else is imported; not a population ranking, not a validated ability scale, not Elo win probabilities."
+  ],
+  "params": {
+   "aging_per_day": 0.0005,
+   "declared_efforts": [
+    "hard",
+    "race"
+   ],
+   "floor_t10_s": 1560.0,
+   "grace_days": 30,
+   "hilly_m_per_km": 20.0,
+   "max_age_days": 365,
+   "max_m": 42500.0,
+   "min_m": 3000.0,
+   "ref_m": 10000.0,
+   "riegel_fit_max_s": 13800.0,
+   "riegel_k": 1.06,
+   "scale": {
+    "top_points": 3000.0,
+    "top_t10_s": 1560.0,
+    "zero_t10_s": 7200.0
+   },
+   "sports": [
+    "Run"
+   ],
+   "support_tol": 0.03
+  },
+  "scale_examples": [
+   {
+    "mmr": 0.0,
+    "t10_display": "2:00:00",
+    "t10_s": 7200
+   },
+   {
+    "mmr": 795.3440160778634,
+    "t10_display": "1:20:00",
+    "t10_s": 4800
+   },
+   {
+    "mmr": 1359.6495759939205,
+    "t10_display": "1:00:00",
+    "t10_s": 3600
+   },
+   {
+    "mmr": 1717.284194357651,
+    "t10_display": "50:00",
+    "t10_s": 3000
+   },
+   {
+    "mmr": 2154.993592071784,
+    "t10_display": "40:00",
+    "t10_s": 2400
+   },
+   {
+    "mmr": 2719.299151987841,
+    "t10_display": "30:00",
+    "t10_s": 1800
+   },
+   {
+    "mmr": 3000.0,
+    "t10_display": "26:00",
+    "t10_s": 1560
+   }
+  ],
+  "scale_version": "mmr-scale-v1",
+  "version": "mmr-envelope-v2"
+ },
+ "overview": {
+  "bands": [
+   {
+    "best_key": "750213",
+    "best_pace_s_per_km": 266.40000000000003,
+    "best_t10_s": 2777.1287868807476,
+    "converted": true,
+    "count": 70,
+    "label": "3\u20137 km"
+   },
+   {
+    "best_key": "750212",
+    "best_pace_s_per_km": 278.5,
+    "best_t10_s": 2785.0,
+    "converted": true,
+    "count": 144,
+    "label": "7\u201315 km"
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": true,
+    "count": 0,
+    "label": "15\u201330 km"
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": true,
+    "count": 0,
+    "label": "30\u201342.5 km"
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": false,
+    "count": 0,
+    "label": "over 42.5 km (ultra; not converted)",
+    "longest_m": null
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": false,
+    "count": 0,
+    "label": "under 3 km (not converted)",
+    "longest_m": null
+   }
+  ],
+  "estimate": {
+   "as_of_utc": "2025-12-30T19:13:34Z",
+   "best_evidence_age_days": 13.409421296296296,
+   "cap": null,
+   "informative_365d": 214,
+   "informative_90d": 56,
+   "mmr": 1868.7062170946494,
+   "setter": {
+    "activity_id": "750213",
+    "activity_type": "Run",
+    "distance_m": 5000.0,
+    "effort": "race",
+    "elapsed_s": 1332.0,
+    "elevation_gain_m": 37.0,
+    "flags": [
+     "declared race effort: context only; the label does not change the score"
+    ],
+    "informative": true,
+    "points": 1868.7062170946494,
+    "reasons": [],
+    "start_utc": "2025-12-17T09:24:00Z",
+    "t10_s": 2777.1287868807476
+   },
+   "setter_aged_t10_s": 2777.1287868807476,
+   "status": "high",
+   "supporting": 2,
+   "t10_display": "46:17",
+   "t10_s": 2777.1287868807476,
+   "upper_note": "a recent declared hard effort agrees within 3 %"
+  },
+  "participant": {
+   "activity_count": 214,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-05T07:26:18Z",
+   "id": 6,
+   "label": "Improving runner (synthetic)",
+   "last_activity_utc": "2025-12-30T19:13:34Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  "quality": {
+   "activities": 214,
+   "by_type": [
+    {
+     "count": 214,
+     "type": "Run"
+    }
+   ],
+   "declared_efforts": 12,
+   "first_utc": "2025-01-05T07:26:18Z",
+   "hilly": 33,
+   "informative": 214,
+   "last_utc": "2025-12-30T19:13:34Z",
+   "missing": {
+    "elevation": 0,
+    "heart_rate": 47,
+    "moving_time": 0,
+    "perceived_exertion": 214
+   },
+   "not_informative": [],
+   "rows_imported": 214,
+   "rows_rejected": 0
+  },
+  "recent_changes": [
+   {
+    "activities": [
+     "750213"
+    ],
+    "at_utc": "2025-12-17T09:24:00Z",
+    "explanation": [
+     "New best evidence: activity 750213 (5 km in 22:12, 10 km-equivalent 46:17).",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1868.7062170946494,
+    "status": "high"
+   },
+   {
+    "activities": [
+     "750212"
+    ],
+    "at_utc": "2025-11-17T09:24:00Z",
+    "explanation": [
+     "New best evidence: activity 750212 (10 km in 46:25, 10 km-equivalent 46:25)."
+    ],
+    "mmr": 1863.1544345494356,
+    "status": "low"
+   },
+   {
+    "activities": [
+     "750175"
+    ],
+    "at_utc": "2025-11-17T05:47:18Z",
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1802.1081258342851,
+    "status": "low"
+   },
+   {
+    "activities": [
+     "750211"
+    ],
+    "at_utc": "2025-10-18T09:24:00Z",
+    "explanation": [
+     "New best evidence: activity 750211 (5 km in 22:58, 10 km-equivalent 47:53).",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1802.1081258342851,
+    "status": "high"
+   },
+   {
+    "activities": [
+     "750144"
+    ],
+    "at_utc": "2025-09-26T04:00:05Z",
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1772.9914590985734,
+    "status": "low"
+   },
+   {
+    "activities": [
+     "750210"
+    ],
+    "at_utc": "2025-09-18T09:24:00Z",
+    "explanation": [
+     "New best evidence: activity 750210 (10 km in 48:36, 10 km-equivalent 48:36)."
+    ],
+    "mmr": 1772.9914590985734,
+    "status": "high"
+   },
+   {
+    "activities": [
+     "750140"
+    ],
+    "at_utc": "2025-09-17T18:30:09Z",
+    "explanation": [
+     "No change: no new evidence beats the current estimate.",
+     "Evidence coverage: low \u2192 high (a recent declared hard effort agrees within 3 %)."
+    ],
+    "mmr": 1718.5062813115792,
+    "status": "high"
+   },
+   {
+    "activities": [
+     "750209"
+    ],
+    "at_utc": "2025-08-19T09:24:00Z",
+    "explanation": [
+     "New best evidence: activity 750209 (5 km in 23:58, 10 km-equivalent 49:58).",
+     "Evidence coverage: high \u2192 low (only one observation supports this level)."
+    ],
+    "mmr": 1718.5062813115792,
+    "status": "low"
+   }
+  ],
+  "scale_version": "mmr-scale-v1",
+  "snapshots": [
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1281"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "high",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1267"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1248"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1230"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1214"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1192"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1171"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1156"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1136"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1123"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1107"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "annotation on activity 1089"
+   },
+   {
+    "activities": 214,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-30T19:13:34Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1868.7062170946494,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "750213",
+    "status": "medium",
+    "t10_s": 2777.1287868807476,
+    "trigger": "import 6"
+   }
+  ],
+  "version": "mmr-envelope-v2",
+  "volume": {
+   "active_weeks_of_last_12": 12,
+   "km_last_28d": 151.99,
+   "runs_last_28d": 18
+  }
+ },
+ "overview_ultra": {
+  "bands": [
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": true,
+    "count": 0,
+    "label": "3\u20137 km"
+   },
+   {
+    "best_key": "740203",
+    "best_pace_s_per_km": 292.1677215189873,
+    "best_t10_s": 2880.8948635684005,
+    "converted": true,
+    "count": 44,
+    "label": "7\u201315 km"
+   },
+   {
+    "best_key": "740045",
+    "best_pace_s_per_km": 298.6255447536038,
+    "best_t10_s": 2796.7120897112086,
+    "converted": true,
+    "count": 127,
+    "label": "15\u201330 km"
+   },
+   {
+    "best_key": "740224",
+    "best_pace_s_per_km": 290.0817632420903,
+    "best_t10_s": 2660.7542659102614,
+    "converted": true,
+    "count": 51,
+    "label": "30\u201342.5 km"
+   },
+   {
+    "best_key": "740221",
+    "best_pace_s_per_km": 292.12,
+    "best_t10_s": null,
+    "converted": false,
+    "count": 3,
+    "label": "over 42.5 km (ultra; not converted)",
+    "longest_m": 160934.4
+   },
+   {
+    "best_key": null,
+    "best_pace_s_per_km": null,
+    "best_t10_s": null,
+    "converted": false,
+    "count": 0,
+    "label": "under 3 km (not converted)",
+    "longest_m": null
+   }
+  ],
+  "estimate": {
+   "as_of_utc": "2025-12-31T20:00:25Z",
+   "best_evidence_age_days": 48.03829861111111,
+   "cap": null,
+   "informative_365d": 222,
+   "informative_90d": 50,
+   "mmr": 1846.7400858612084,
+   "setter": {
+    "activity_id": "740191",
+    "activity_type": "Run",
+    "distance_m": 34610.0,
+    "effort": "unknown",
+    "elapsed_s": 10378.0,
+    "elevation_gain_m": 4.0,
+    "flags": [],
+    "informative": true,
+    "points": 1864.3523805692703,
+    "reasons": [],
+    "start_utc": "2025-11-13T19:05:16Z",
+    "t10_s": 2783.299689211483
+   },
+   "setter_aged_t10_s": 2808.402684670588,
+   "status": "medium",
+   "supporting": 6,
+   "t10_display": "46:48",
+   "t10_s": 2808.402684670588,
+   "upper_note": "no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it"
+  },
+  "participant": {
+   "activity_count": 225,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-05T03:08:13Z",
+   "id": 5,
+   "label": "Ultra specialist (synthetic)",
+   "last_activity_utc": "2025-12-31T20:00:25Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  "quality": {
+   "activities": 225,
+   "by_type": [
+    {
+     "count": 225,
+     "type": "Run"
+    }
+   ],
+   "declared_efforts": 4,
+   "first_utc": "2025-01-05T03:08:13Z",
+   "hilly": 32,
+   "informative": 222,
+   "last_utc": "2025-12-31T20:00:25Z",
+   "missing": {
+    "elevation": 0,
+    "heart_rate": 55,
+    "moving_time": 0,
+    "perceived_exertion": 225
+   },
+   "not_informative": [
+    {
+     "count": 3,
+     "reason": "longer than 42.5 km"
+    }
+   ],
+   "rows_imported": 225,
+   "rows_rejected": 0
+  },
+  "recent_changes": [
+   {
+    "activities": [
+     "740220"
+    ],
+    "at_utc": "2025-12-31T20:00:25Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 48 days old, so it counts 0.90 % slower than recorded."
+    ],
+    "mmr": 1846.7400858612084,
+    "status": "medium"
+   },
+   {
+    "activities": [
+     "740219"
+    ],
+    "at_utc": "2025-12-28T05:28:56Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 44 days old, so it counts 0.72 % slower than recorded."
+    ],
+    "mmr": 1850.2475183301385,
+    "status": "medium"
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-12-28T03:08:13Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 44 days old, so it counts 0.72 % slower than recorded."
+    ],
+    "mmr": 1850.342675663268,
+    "status": "medium"
+   },
+   {
+    "activities": [
+     "740218"
+    ],
+    "at_utc": "2025-12-27T14:33:07Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 44 days old, so it counts 0.69 % slower than recorded."
+    ],
+    "mmr": 1850.85337849009,
+    "status": "medium"
+   },
+   {
+    "activities": [
+     "740217"
+    ],
+    "at_utc": "2025-12-26T16:04:04Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 43 days old, so it counts 0.64 % slower than recorded."
+    ],
+    "mmr": 1851.766123385082,
+    "status": "medium"
+   },
+   {
+    "activities": [
+     "740216"
+    ],
+    "at_utc": "2025-12-25T04:20:29Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 41 days old, so it counts 0.57 % slower than recorded."
+    ],
+    "mmr": 1853.2173105293375,
+    "status": "medium"
+   },
+   {
+    "activities": [
+     "740215"
+    ],
+    "at_utc": "2025-12-22T11:52:13Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 39 days old, so it counts 0.43 % slower than recorded."
+    ],
+    "mmr": 1855.8388130873407,
+    "status": "medium"
+   },
+   {
+    "activities": [],
+    "at_utc": "2025-12-21T03:08:13Z",
+    "explanation": [
+     "Recency assumption: evidence from activity 740191 is 37 days old, so it counts 0.37 % slower than recorded."
+    ],
+    "mmr": 1857.1711470011378,
+    "status": "medium"
+   }
+  ],
+  "scale_version": "mmr-scale-v1",
+  "snapshots": [
+   {
+    "activities": 225,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-31T20:00:25Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1846.7400858612084,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "740191",
+    "status": "medium",
+    "t10_s": 2808.402684670588,
+    "trigger": "annotation on activity 1043"
+   },
+   {
+    "activities": 225,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-31T20:00:25Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1846.7400858612084,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "740191",
+    "status": "medium",
+    "t10_s": 2808.402684670588,
+    "trigger": "annotation on activity 997"
+   },
+   {
+    "activities": 225,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-31T20:00:25Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1846.7400858612084,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "740191",
+    "status": "medium",
+    "t10_s": 2808.402684670588,
+    "trigger": "annotation on activity 967"
+   },
+   {
+    "activities": 225,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-31T20:00:25Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1846.7400858612084,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "740191",
+    "status": "medium",
+    "t10_s": 2808.402684670588,
+    "trigger": "annotation on activity 922"
+   },
+   {
+    "activities": 225,
+    "algorithm_version": "mmr-envelope-v2",
+    "as_of_utc": "2025-12-31T20:00:25Z",
+    "computed_utc": "2026-10-25T18:49:52Z",
+    "mmr": 1846.7400858612084,
+    "scale_version": "mmr-scale-v1",
+    "setter_activity_id": "740191",
+    "status": "medium",
+    "t10_s": 2808.402684670588,
+    "trigger": "import 5"
+   }
+  ],
+  "version": "mmr-envelope-v2",
+  "volume": {
+   "active_weeks_of_last_12": 12,
+   "km_last_28d": 266.09,
+   "runs_last_28d": 11
+  }
+ },
+ "participants": [
+  {
+   "activity_count": 134,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-08T06:35:31Z",
+   "id": 1,
+   "label": "Beginner (synthetic)",
+   "last_activity_utc": "2025-12-30T01:29:06Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  {
+   "activity_count": 194,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-03T15:28:11Z",
+   "id": 2,
+   "label": "Consistent recreational (synthetic)",
+   "last_activity_utc": "2025-12-30T07:02:07Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  {
+   "activity_count": 252,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-01T09:15:31Z",
+   "id": 4,
+   "label": "Endurance specialist (synthetic)",
+   "last_activity_utc": "2025-12-30T15:50:45Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  {
+   "activity_count": 275,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-01T16:44:57Z",
+   "id": 3,
+   "label": "Fast short-distance (synthetic)",
+   "last_activity_utc": "2025-12-30T22:57:39Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  {
+   "activity_count": 214,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-05T07:26:18Z",
+   "id": 6,
+   "label": "Improving runner (synthetic)",
+   "last_activity_utc": "2025-12-30T19:13:34Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  {
+   "activity_count": 126,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-01T14:06:25Z",
+   "id": 7,
+   "label": "Returning after inactivity (synthetic)",
+   "last_activity_utc": "2026-01-01T06:41:45Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  },
+  {
+   "activity_count": 225,
+   "created_utc": "2026-10-25T18:49:52Z",
+   "data_kind": "synthetic",
+   "first_activity_utc": "2025-01-05T03:08:13Z",
+   "id": 5,
+   "label": "Ultra specialist (synthetic)",
+   "last_activity_utc": "2025-12-31T20:00:25Z",
+   "last_import_utc": "2026-10-25T18:49:52Z"
+  }
+ ]
+}
