@@ -1,0 +1,53 @@
+# RunnasUP: keep private data, local state and generated files out of the repository.
+
+# Private running data: personal and demo databases, Strava exports (never commit real activities)
+data/
+exports/
+private/
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+export_*.zip
+activities.csv
+*.fit
+*.fit.gz
+*.gpx
+*.gpx.gz
+*.tcx
+*.tcx.gz
+
+# Full local backup of removed features and pre-cleanup sources (kept on this machine only)
+archive/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Environments, caches and build outputs
+.venv/
+.venv-*/
+__pycache__/
+.pytest_cache/
+web/node_modules/
+web/dist/
+*.tsbuildinfo
+*.log
+coverage/
+
+# Local tool state
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+.runrank-session.lock
+.DS_Store
+
+# Claude Code files stay local, as in my other repos
+.claude/
+CLAUDE.md
+
+# Shareable synthetic examples and sanitized evidence ARE meant to be kept
+!examples/synthetic/
+!docs/evidence/
