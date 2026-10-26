@@ -1,0 +1,362 @@
+RunRank Ratings Lab experiment (ratings-lab-exp5). SYNTHETIC data only; nothing here is a population standard.
+Frozen methods and parameters: sha256 487a0f3cdd396cb4 (A = mmr-envelope-v2 unchanged; B-D defaults {"A": {}, "B": {"speed_weight": 0.5, "k_best": 1, "walk_ref_pace_s": 600.0, "continuity": "label", "long_performance": "off"}, "C": {"aggregation": "specialist", "k_best": 1}, "D": {"speed_weight": 0.5, "alpha": 0.3, "step_max": 50.0, "init": "first"}})
+
+== 0. Evaluation specification (written before results) ==
+  mandatory_invariants:
+    I1 the identical activity gives identical scores whether labelled easy, hard or unknown (case 02)
+    I2 upload order does not change the reconstructed results (shuffled uploads, every runner)
+    I3 an exact duplicate or overlapping second recording changes nothing (cases 12d, 12o)
+    I4 repeating an identical observation cannot raise any component without bound (50 repeats)
+    I5 an easy run never lowers any component at its own time (case 10)
+    I6 missing moving time, heart rate or effort never yields a higher score than present data (case 01)
+    I7 no numerical coupling to race Elo (the lab modules import no race module)
+    I8 a runner's score depends only on their own history (no cohort normalisation)
+    I9 a single implausibly fast observation is kept, and carries a visible warning; the user can exclude it (case 13; revised 2026-10-22, exp5, user direction: never exclude a valid activity only because its converted score beats an anchor; earlier versions required 'raises nothing')
+    I10 no stopped-time cliff: 4.9/5.1 %, 14.9/15.1 % and 54.9/55.1 % stopped change endurance by < 5 points (case 16; added 2026-10-22 at the user's direction, exp2)
+    I11 an overlapping Walk, watch-left-running or other activity never lowers a genuine run's components (cases 15c, 15d; exp2)
+  desired:
+    D1 5 km longest -> continuous 8 km raises endurance evidence (case 01)
+    D2 the same distance faster raises speed (case 03)
+    D3 a long run with 41 min stopped keeps its recorded distance as completion evidence, is labelled 'with stops', and does not raise speed (case 04; revision 3, 2026-10-22, user direction: preserve observed facts and flag uncertainty; exp2 expected partial credit)
+    D4 a slow continuous 21 km raises endurance and does not lower speed (case 05)
+    D5 fast 5 km specialist and ultra specialist get recognisably different profiles (cases 06, 08)
+    D6 the improving beginner's combined score rises over the year (case 09)
+    D7 returning after 200 days: lower than before the gap, with no single-step drop over 150 points (case 11)
+    D8 60 noisy ordinary runs drift up by at most 39 points (about 2 % speed) after the first five, for each of seeds 1-5 (case 14)
+    D9 a run beyond 100 km is represented in the profile (case 08)
+  trade_offs:
+    - speed vs endurance weight (75/25, 50/50, 25/75): which runners gain or lose
+    - specialist (max) vs balanced (mean of demonstrated) aggregation of distance categories
+    - responsiveness (best single session, k = 1) vs robustness (second-best session, k = 2)
+    - sequential smoothing (bounded steps) vs immediate recognition of new capacity
+  not_supported_by_data:
+    - whether a summary activity was uninterrupted running (moving time is a device estimate)
+    - running vs walking (only a pace anchor; slow runners and fast walkers overlap)
+    - terrain difficulty (total ascent does not describe a route; no correction is made)
+    - true maximal effort (labels are self-reported and are not used for points)
+    - any physiological ground truth: the generator's 'true' times are assumptions, not measurements
+  selection rule: reject a method that fails any mandatory invariant at its default parameters; rank the rest by desired behaviours passed (default parameters, then share of grid passing); keep at most two; ties go to the method with fewer parameters
+
+== 1. Mandatory invariants and desired behaviour (default parameters) ==
+   method  I1  I2  I3  I4  I5  I6  I7  I8  I9 I10 I11 |  D1  D2  D3  D4  D5  D6  D7  D8  D9 | desired
+   A       ok  ok  ok  ok  ok  ok  ok  ok  ok  ok  ok |  no  ok  no  no  no  ok  ok  ok  no | 4/9
+   B       ok  ok  ok  ok  ok  ok  ok  ok  ok  ok  ok |  ok  ok  ok  ok  ok  ok  ok  ok  ok | 9/9
+   C       ok  ok  ok  ok  ok  ok  ok  ok  ok  ok  ok |  no  ok  ok  no  ok  ok  ok  ok  ok | 7/9
+   D       ok  ok  ok  ok  ok  ok  ok  ok  ok  ok  ok |  ok  ok  ok  ok  ok  ok  ok  no  no | 7/9
+
+== 2. Predeclared parameter grid (share of combinations passing) ==
+   B: 108 combinations; all invariants hold in 108; desired behaviours passed 72 % overall; per behaviour: D1 54/108 D2 108/108 D3 54/108 D4 54/108 D5 108/108 D6 108/108 D7 108/108 D8 54/108 D9 54/108
+   C: 4 combinations; all invariants hold in 4; desired behaviours passed 67 % overall; per behaviour: D1 0/4 D2 4/4 D3 4/4 D4 0/4 D5 4/4 D6 4/4 D7 2/4 D8 2/4 D9 4/4
+   D: 24 combinations; all invariants hold in 24; desired behaviours passed 72 % overall; per behaviour: D1 24/24 D2 24/24 D3 24/24 D4 24/24 D5 24/24 D6 24/24 D7 12/24 D8 0/24 D9 0/24
+
+== 3. Selection (rule above) ==
+   B: desired 9/9 at defaults, 72 % across its grid  <- FINALIST
+   D: desired 7/9 at defaults, 72 % across its grid  <- FINALIST
+   C: desired 7/9 at defaults, 67 % across its grid
+   A: desired 4/9 at defaults, 44 % across its grid
+
+== 4. Fictional runners: components and combined scores (seed 1, as of 2025-12-31) ==
+   runner (activities; longest km)         A |    B:S    B:E    B75    B50    B25 |  C:sho  C:mid  C:mar  C:ult  Cspec   Cbal |    D75    D50    D25
+   Beginner: 5 km longest (184; 8.0)    1495 |   1495   1128   1403   1311   1220 |   1561      -      -      -   1561   1561 |   1368   1284   1200
+   Fast short-distance sp (257; 10.0)   2338 |   2338   1250   2066   1794   1522 |   2337      -      -      -   2337   2337 |   2028   1764   1499
+   Steady recreational ru (207; 11.9)   1689 |   1689   1335   1600   1512   1423 |   1693      -      -      -   1693   1693 |   1535   1465   1396
+   Marathon specialist (266; 42.2)      2159 |   2159   2030   2127   2094   2062 |   1721   1985   2126      -   2126   1944 |   2030   1996   1963
+   Ultra specialist (209; 160.9)        1785 |   1785   2752   2026   2268   2510 |      -   1723   1735   2041   2041   1833 |   1837   1906   1976
+   Improving runner (220; 12.0)         1782 |   1782   1336   1671   1559   1448 |   1817      -      -      -   1817   1817 |   1600   1510   1421
+   Runner with many easy  (325; 12.0)   1646 |   1646   1347   1571   1496   1422 |   1646      -      -      -   1646   1646 |   1547   1479   1410
+   order B 75/25: marathon > speed > ultra > improving > steady > easy > beginner
+   order B 50/50: ultra > marathon > speed > improving > steady > easy > beginner
+   order B 25/75: ultra > marathon > speed > improving > steady > easy > beginner
+   order D 75/25: marathon > speed > ultra > improving > easy > steady > beginner
+   order D 50/50: marathon > ultra > speed > improving > easy > steady > beginner
+   order D 25/75: ultra > marathon > speed > improving > easy > steady > beginner
+   order C specialist: speed > marathon > ultra > improving > steady > easy > beginner
+   order C balanced: speed > marathon > ultra > improving > steady > easy > beginner
+
+== 5. Before/after for the matched cases (default parameters) ==
+   01 longest run 5 km, then a continuous 8 km at a slower pace (5:45/km)
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 924
+   02e the identical 8 km labelled easy
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 924
+   02h the identical 8 km labelled hard
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 924
+   02u the identical 8 km labelled unknown
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 924
+   03 the same 8 km later, faster (38:40)
+      A spe 1636 -> spe 1758
+      B spe 1636 end 1130 -> spe 1758 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1769 mid - mar - ult -
+      D spe 1631 end 924 -> spe 1669 end 974
+   04 12 km with 41 min stopped (moving 1:09:00, elapsed 1:50:00)
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 1350
+      C sho 1674 mid - mar - ult - -> sho 1674 mid 532 mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 924
+   05 slow continuous 21 km at 7:30/km (moving = elapsed - 1 min)
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 1657
+      C sho 1674 mid - mar - ult - -> sho 1674 mid 946 mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 924
+   12d exact duplicate upload of the 8 km
+      A spe 1636 -> spe 1636
+      B spe 1636 end 1130 -> spe 1636 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 924 -> spe 1636 end 924
+   12o overlapping second recording (watch + phone, starts 3 min later)
+      A spe 1636 -> spe 1636
+      B spe 1636 end 1130 -> spe 1636 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 924 -> spe 1636 end 924
+   12s one 10 km session uploaded as two 5 km parts (2 min apart)
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 874
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 874
+   13 a single implausibly fast observation (10 km in 20:00)
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 3515 end 1251
+      C sho 1674 mid - mar - ult - -> sho 3515 mid - mar - ult -
+      D spe 1636 end 874 -> spe 1686 end 924
+   15a same-type probable duplicate: watch 8 km (moving time) and phone 8.3 km starting 1 min later without moving time
+      A spe 1636 -> spe 1636
+      B spe 1636 end 1130 -> spe 1636 end 1130
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 924 -> spe 1636 end 924
+   15b same-type ambiguous overlap: 10 km race and a 6 km crop of it with the same start
+      A spe 2155 -> spe 2178
+      B spe 2155 end 1251 -> spe 2155 end 1251
+      C sho 2155 mid - mar - ult - -> sho 2197 mid - mar - ult -
+      D spe 1686 end 924 -> spe 1686 end 924
+   15c different-type overlap: a 3 h Walk started 1 h before the 10 km race
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 874
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 874
+   15d watch left running: a 12 km Run with 72 h elapsed (1 h moving) overlapping later runs
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 1350
+      C sho 1674 mid - mar - ult - -> sho 1674 mid 0 mar - ult -
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-04.9 100 mile in 26:00:00 with 4.9 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-05.0 100 mile in 26:00:00 with 5.0 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-05.1 100 mile in 26:00:00 with 5.1 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-14.9 100 mile in 26:00:00 with 14.9 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-15.0 100 mile in 26:00:00 with 15.0 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-15.1 100 mile in 26:00:00 with 15.1 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-54.9 100 mile in 26:00:00 with 54.9 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-55.0 100 mile in 26:00:00 with 55.0 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   16-55.1 100 mile in 26:00:00 with 55.1 % stopped
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2761
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 596
+      D spe 1636 end 874 -> spe 1636 end 924
+   17a 100 km ultra, 8 % aid-station stops
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2502
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 1507
+      D spe 1636 end 874 -> spe 1636 end 924
+   17b 24 h race: 160 km with 20 % rest
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2758
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 803
+      D spe 1636 end 874 -> spe 1636 end 924
+   17c the same 24 h race without moving time
+      A spe 1636 -> spe 1636
+      B spe 1636 end 874 -> spe 1636 end 2758
+      C sho 1674 mid - mar - ult - -> sho 1674 mid - mar - ult 803
+      D spe 1636 end 874 -> spe 1636 end 924
+
+== 6. Sensitivity ==
+   activity count (combined, default params; 25 / 50 / 100 % of the year's activities, every 4th/2nd/all):
+     beginner   A 1495/1495/1495  B 1297/1297/1311  C 1561/1561/1561  D 1217/1234/1284
+     speed      A 2338/2338/2338  B 1794/1794/1794  C 2337/2337/2337  D 1735/1754/1764
+     ultra      A 1778/1778/1785  B 2265/2265/2268  C 2041/2041/2041  D 1861/1888/1906
+     easy       A 1589/1606/1646  B 1454/1470/1496  C 1612/1633/1646  D 1435/1453/1479
+   noise (case 14: 60 identical 5 km runs, distance sd 2 %; speed-like component after 5 vs 60 runs):
+     A drift per seed: -0.7 -21.6 +26.3 +14.1 +31.1
+     B drift per seed: -0.7 -21.6 +26.3 +14.1 +31.1
+     C drift per seed: -0.7 -18.8 +25.0 +13.6 +32.0
+     D drift per seed: -2.3 -34.0 +30.3 +30.6 +64.7
+   missing data (case 01 with moving time, HR and effort removed; combined):
+     A 1636 -> 1636  B 1383 -> 1383  C 1674 -> 1674  D 1280 -> 1280
+   improvement and weaker evidence (improving runner; easy-only runner after a strong 10 km, case 10):
+     improving, combined at day 60/180/364: A 1420/1540/1782  B 1381/1437/1559  C 1464/1581/1817  D 1312/1396/1510
+     easy-only, combined at day 1/40/82: A 1924/1914/1874  B 1588/1581/1555  C 1924/1914/1875  D 1588/1581/1555
+   initialisation (D only; beginner, combined day 30/120/364): first 1071/1168/1284, anchor 953/1169/1284
+   observation order: uploads shuffled give identical results for every method (I2).
+   outlier (one 10 km 3 % faster than the speed specialist's best recent evidence, e.g. a GPS short-read): A +63.6  B +32.3  C +64.3  D +20.0   (B with k_best=2: +11.1)
+   balanced aggregation and breadth: marathon specialist adds one slow 6 km jog (new short category for nobody, but the ultra runner gains a short category):
+     ultra runner C specialist: 2041 -> 2041
+     ultra runner C balanced: 1833 -> 1634
+   withheld effort labels (speed specialist's races relabelled unknown): A +0.0  B +0.0  C +0.0  D +0.0
+
+== 7. Held-out scenarios (evaluated only after selection; finalists B, D) ==
+   H1 every run recorded 3 % long by GPS:
+      B spe 1697 end 1146 (reference spe 1636 end 1130)
+      D spe 1697 end 941 (reference spe 1636 end 924)
+   H2 downhill point-to-point 10 km, 4 % assisted, no descent recorded:
+      B spe 2004 end 1251 (reference spe 1924 end 1251)
+      D spe 1948 end 1251 (reference spe 1924 end 1251)
+   H3 fast 3 km segment saved separately from a 10 km tempo:
+      B spe 1853 end 1251 (reference spe 1853 end 1251)
+      D spe 2013 end 1251 (reference spe 1853 end 1251)
+   H4 slow continuous jogger: 15 km at 9:45/km:
+      B spe 483 end 1373 (reference spe 483 end 677)
+      D spe 483 end 727 (reference spe 483 end 677)
+   H5 treadmill-only runner (Virtual Run):
+      B spe - end -
+      D spe - end -
+   H6 100 mile ultra with 20 % aid-station stops:
+      B spe 1785 end 2752 (reference spe 1785 end 2752)
+      D spe 1767 end 2046 (reference spe 1767 end 2046)
+   H7 same history uploaded shuffled and twice: B identical=True  D identical=True
+
+== 8. What method B rewards (defaults; deltas in points) ==
+   scale slopes: 1 % faster = +19.52 speed points; 1 % longer = +5.41 endurance points
+   change                                                            speed   endur. |    75/25    50/50    25/75
+   5 km best improves from 25:00 to 23:00                           +163.6     +0.0 |   +122.7    +81.8    +40.9
+   longest run 5 km -> 8 km (46:00, 5:45/km)                          +0.0   +255.4 |    +63.8   +127.7   +191.5
+   longest run 20 km -> 30 km (6:20/km)                               +0.0   +220.3 |    +55.1   +110.2   +165.2
+   same 20 km completed faster (6:00 -> 5:30/km)                      +0.0     +0.0 |     +0.0     +0.0     +0.0
+   fast short-distance specialist adds a slow 25 km (6:30/km)         +0.0   +498.9 |   +124.7   +249.5   +374.2
+   ultra specialist adds a short easy 6 km (6:30/km)                  +0.0     +0.0 |     +0.0     +0.0     +0.0
+
+== 9. Long-distance improvement (matched: only performances at one distance; same type, stops, label) ==
+   distance  cfg          performance          endurance       combined 50/50       +5 repeats
+   20 km     B       1284.2 -> 1384.8    1627.7 -> 1627.7     1456.0 -> 1506.3     1506.3
+   20 km     B+LP    1284.2 -> 1384.8    1627.7 -> 1627.7     1456.0 -> 1506.3     1506.3
+   marathon  B       1553.8 -> 1654.4    2033.3 -> 2033.3     1793.6 -> 1843.9     1843.9
+   marathon  B+LP    1553.8 -> 1654.4    2033.3 -> 2033.3     1793.6 -> 1843.9     1843.9
+   50 km     B            - -> -         2125.5 -> 2125.5          - -> -               -
+   50 km     B+LP    1356.9 -> 1473.3    2125.5 -> 2125.5     1741.2 -> 1799.4     1799.4
+   100 km    B            - -> -         2502.1 -> 2502.1          - -> -               -
+   100 km    B+LP    1287.6 -> 1416.9    2502.1 -> 2502.1     1894.9 -> 1959.5     1959.5
+   boundary at 42.5 km (same 5:55/km elapsed pace): 42.4 km: spee 1557.1 endu 2036.0 long -  42.5 km: spee 1557.4 endu 2037.2 long -  42.6 km: spee - endu 2038.5 long 1488.1
+
+== 10. Credible new bests, a suspicious outlier and explicit exclusion (B defaults) ==
+   credible: 10 km 3 % faster than best recent evidence     combined   +32.3; speed set by ok (provisional); pending: ['910246']
+      ... excluded                                          combined    +0.0 (exclusion removes it; in production: the activity's Exclude annotation)
+   suspicious: 'Run' 40 km in 2:00:00 (a ride?)             combined  +649.4; speed set by ride (provisional); pending: ['910246']
+      ... excluded                                          combined    +0.0 (exclusion removes it; in production: the activity's Exclude annotation)
+
+== 11. Missing moving time (credit function; full-range invariant; label vs scalar) ==
+   label  360 grid points (distance x moving pace x stopped share up to 99 %): missing > known in 0
+   scalar 360 grid points (distance x moving pace x stopped share up to 99 %): missing > known in 0
+   04   12 km with 41 min stopped (moving 1:09:00, elapsed 1:50:00)    label: 12.00 km credited; scalar: 8.13 km credited
+   15d  watch left running: a 12 km Run with 72 h elapsed (1 h moving) label: 12.00 km credited; scalar: 6.00 km credited
+   17b  24 h race: 160 km with 20 % rest                               label: 160.00 km credited; scalar: 136.00 km credited
+   17c  the same 24 h race without moving time                         label: 160.00 km credited; scalar: 80.00 km credited
+
+== 12. Performance across 3-160.9 km: expected properties (written first) and dense scan ==
+   BP1 continuity: at a fixed pace, moving 0.01 km anywhere in 3-160.9 km changes performance by < 1 point
+   BP2 faster is better: at a fixed distance, 1 % less elapsed time always raises performance
+   BP3 same pace, longer distance never scores lower (no penalty for running further at the same pace)
+   BP4 consistent rule: the same distance, time and type (Run or Trail Run) is scored by one rule at every distance; Run and Trail Run are eligible on both sides of 42.5 km
+   BP5 unchanged where it was right: for Runs of 3-42.5 km the value equals the production 10 km-equivalent
+   BP6 defined for plausible paces across 3-160.9 km; below 3 km missing (not zero)
+   off      speed only (Riegel, Run 3-42.5 km)
+      pace 4:00/km: largest 0.05 km step   1.95 points; value appears/disappears 1 times; worst drop with distance +0.00; missing at 2368 of 3159 distances
+      pace 5:00/km: largest 0.05 km step   1.95 points; value appears/disappears 1 times; worst drop with distance +0.00; missing at 2368 of 3159 distances
+      pace 6:00/km: largest 0.05 km step   1.95 points; value appears/disappears 1 times; worst drop with distance +0.00; missing at 2368 of 3159 distances
+      pace 7:30/km: largest 0.05 km step   1.95 points; value appears/disappears 1 times; worst drop with distance +0.00; missing at 2368 of 3159 distances
+      BP2 faster always higher: False; BP4 Trail Run scored like Run at 30/60 km: False
+   anchor   exp3: max(speed, anchor-curve LP > 42.5 km)
+      pace 4:00/km: largest 0.05 km step  14.49 points; value appears/disappears 0 times; worst drop with distance -14.49; missing at 0 of 3159 distances
+      pace 5:00/km: largest 0.05 km step  46.14 points; value appears/disappears 0 times; worst drop with distance -46.14; missing at 0 of 3159 distances
+      pace 6:00/km: largest 0.05 km step  71.99 points; value appears/disappears 0 times; worst drop with distance -71.99; missing at 0 of 3159 distances
+      pace 7:30/km: largest 0.05 km step 103.64 points; value appears/disappears 0 times; worst drop with distance -103.64; missing at 0 of 3159 distances
+      BP2 faster always higher: True; BP4 Trail Run scored like Run at 30/60 km: False
+   bridged  exp4: one rule, bridged at 42.5 km
+      pace 4:00/km: largest 0.05 km step   1.95 points; value appears/disappears 0 times; worst drop with distance +0.00; missing at 0 of 3159 distances
+      pace 5:00/km: largest 0.05 km step   1.95 points; value appears/disappears 0 times; worst drop with distance +0.00; missing at 0 of 3159 distances
+      pace 6:00/km: largest 0.05 km step   1.95 points; value appears/disappears 0 times; worst drop with distance +0.00; missing at 0 of 3159 distances
+      pace 7:30/km: largest 0.05 km step   1.95 points; value appears/disappears 0 times; worst drop with distance +0.00; missing at 0 of 3159 distances
+      BP2 faster always higher: True; BP4 Trail Run scored like Run at 30/60 km: True
+   at the boundary (5:55/km): off 42.4 km 1557.1 42.5 km 1557.4 42.6 km -  anchor 42.4 km 1557.1 42.5 km 1557.4 42.6 km 1488.1  bridged 42.4 km 1557.1 42.5 km 1557.4 42.6 km 1560.2
+   BP5 bridged equals production for Runs of 3-42.5 km: True
+
+   held-out boundary cases (evaluated after choosing 'bridged'):
+      H8   49.9 km at 6:30/km: bridged 1576.70
+      H8   50.0 km at 6:30/km: bridged 1579.38
+      H8   50.1 km at 6:30/km: bridged 1580.08
+      H8   99.9 km at 6:30/km: bridged 1837.07
+      H8  100.0 km at 6:30/km: bridged 1837.47
+      H8  100.1 km at 6:30/km: bridged 1837.93
+      H8  160.8 km at 6:30/km: bridged 2065.60
+      H8  160.9 km at 6:30/km: bridged 2066.03
+      H8  161.0 km at 6:30/km: bridged 2066.36
+      H9 42.0 km in 3:51:00, recorded 1 % long: 1699.2 -> 1719.9 (+20.7)
+      H9 43.0 km in 3:56:30, recorded 1 % long: 1714.8 -> 1746.4 (+31.6)
+      H10 200 km at 8:00/km: bridged 1847.9
+      H10 250 km at 8:00/km: bridged 2063.1
+      H10 300 km at 8:00/km: bridged -
+      H11 3 km at 2:36/km (just above the 26:00 floor) 2858.3; at 2:30/km 2935.2
+      H12 30 km at 6:00/km, Trail Run vs Run: 1488.9 vs 1488.9 (terrain not adjusted)
+
+== 13. Credibility audit (exp4 policy; B defaults) ==
+   states: dropped = duplicate recording; excluded = physical-floor implausible; held = segment inside a longer
+   same-type recording (counts for nothing until confirmed separate); flagged = counted with a review note
+   first-ever activity (10 km 45:00)                    S 1924.0 E 1251.1 set by {'speed': '1', 'endurance': '1'} | held - | flagged -
+   first genuine race after easy-only history           S 1924.0 E 1251.1 set by {'speed': '99', 'endurance': '99'} | held - | flagged ['99']
+   genuine improvement > 10 % (55:00 -> 47:00)          S 1838.7 E 1251.1 set by {'speed': '99', 'endurance': '3'} | held - | flagged ['99']
+   returning runner: old 40:00, recent 50:00, now 45:00 S 1924.0 E 1251.1 set by {'speed': '99', 'endurance': '2'} | held - | flagged -
+   one ride saved as Run (40 km in 2:00:00)             S 2882.5 E 2004.3 set by {'speed': '9', 'endurance': '9'} | held - | flagged ['9']
+   ... and a second similar ride                        S 2882.5 E 2004.3 set by {'speed': '9', 'endurance': '9'} | held - | flagged ['9']
+   genuine race + 6 km crop of it (same start)          S 1924.0 E 1251.1 set by {'speed': '20', 'endurance': '20'} | held ['21'] | flagged ['20']
+   ... the crop confirmed as separate by the user       S 1937.9 E 1251.1 set by {'speed': '21', 'endurance': '20'} | held - | flagged ['20', '21']
+   import order: backwards identical (components, held, flags): True; 4 interleaved batches identical (components, held, flags): True
+
+== 14. What B rewards: matched examples (bridged performance, label continuity) ==
+   change                                                                               performance         endurance |   75/25   50/50   25/75
+   same distance, faster time (10 km 50:00 -> 45:00)                               1717.3 ->  1924.0  1251.1 ->  1251.1 |  +155.0  +103.3   +51.7  [continuous (1.0 % stopped)]
+   longer distance, same pace (10 km -> 21.1 km at 5:00/km)                        1717.3 ->  1805.2  1251.1 ->  1656.7 |  +167.3  +246.8  +326.2  [continuous (1.0 % stopped)]
+   longer distance, same elapsed time (10 km -> 12 km in 50:00)                    1717.3 ->  2096.4  1251.1 ->  1350.1 |  +309.1  +239.1  +169.1  [continuous (1.0 % stopped)]
+   same distance and elapsed, moving 1:48:00 -> 1:35:00 (21.1 km in 1:50:00)       1723.0 ->  1723.0  1656.7 ->  1656.7 |    +0.0    +0.0    +0.0  [with stops (13.6 % stopped)]
+   same activity with moving time missing (21.1 km in 1:50:00)                     1723.0 ->  1723.0  1656.7 ->  1656.7 |    +0.0    +0.0    +0.0  [unknown (no moving time): recorded distance kept, continuity unverified]
+
+   plots: b_speed_vs_endurance.svg, b_weights.svg, d_weights.svg, finalist_history.svg
+   (every plotted value is also in the tables above)

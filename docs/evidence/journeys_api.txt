@@ -1,0 +1,28 @@
+SYNTHETIC data; in-process API journeys (not a browser, not the React UI).
+
+A     VERIFIED  empty database lists no runners 
+A     VERIFIED  2 runners, 8 + 3 activities, synthetic 
+A     VERIFIED  same activity IDs under another runner are rejected as identity collisions (8), none stored 
+B     VERIFIED  preview: 12 rows, 8 would be inserted, 4 rejected, nothing stored 
+B     VERIFIED  import: 8 inserted, 4 rejected, each with a reason | unrecognized Activity Date 'not a date' | distance columns disagree: '5.00' (display) vs '6500.0' m; unit unknown | invalid elapsed time: '-5' | missing Activity ID
+B     VERIFIED  activity 1003: stored distance/elapsed equal source CSV; HR and RPE null (not 0) 
+D     VERIFIED  exclude 1001 saved once (2 field changes); Running MMR no longer uses it 
+D     VERIFIED  the annotation recorded a new Running MMR calculation 
+E     VERIFIED  CSV (type Run, distance desc) equals the JSON rows exactly 
+F     VERIFIED  new app instance on the same file: the annotation persisted 
+fail  VERIFIED  crash mid-import: status failed, no activity rows added 
+M     VERIFIED  whole history imported: every CSV row stored | 194 rows
+M     VERIFIED  data quality: all activities kept; the double recording is the only non-informative one 
+M     VERIFIED  MMR calculated with evidence and an evidence-coverage label | 1647.4, low
+M     VERIFIED  history reconstructed, labelled as reconstruction 
+M     VERIFIED  added easy run: MMR unchanged and the reason is given 
+M     VERIFIED  added 10 km in 48:00: MMR rises to 3000 x ln(7200/2880)/ln(7200/1560) = 1797.36 | It is better evidence than anything before it, so it raised the estimate.
+M     VERIFIED  change at that instant is explained 
+M     VERIFIED  after restart: identical reconstructed history; one stored calculation per import 
+L     VERIFIED  synthetic CSV imported through the existing importer 
+L     VERIFIED  page opens on the synthetic source; database offered, not selected 
+L     VERIFIED  stored runner selectable; default as-of is today, shown with its basis | as of 2026-10-25
+L     VERIFIED  B combined = 0.5 x 3000 ln(7200/2700)/ln(7200/1560) + 0.5 x 3000 ln(21.0975)/ln(250) = 1790.33 | 1790.33
+L     VERIFIED  stored exclusion, duplicate, unsupported and outside-window states shown with reasons | counted, dropped, excluded (stored), flagged, outside window, unsupported
+L     VERIFIED  method A runs production preprocessing: equals the stored Running MMR | 1923.96
+L     VERIFIED  after the whole page request path (shell, Lab reads, overrides): every table unchanged | file bytes identical
