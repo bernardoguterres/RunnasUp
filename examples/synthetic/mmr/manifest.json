@@ -1,0 +1,79 @@
+{
+ "_comment": "SYNTHETIC. Declared race efforts are applied as 'race' annotations by the demo loader; Strava's CSV has no reliable effort label.",
+ "runners": [
+  {
+   "key": "beginner",
+   "label": "Beginner (synthetic)",
+   "file": "beginner.csv",
+   "declared_race_ids": []
+  },
+  {
+   "key": "recreational",
+   "label": "Consistent recreational (synthetic)",
+   "file": "recreational.csv",
+   "declared_race_ids": [
+    "710191",
+    "710192"
+   ]
+  },
+  {
+   "key": "speed",
+   "label": "Fast short-distance (synthetic)",
+   "file": "speed.csv",
+   "declared_race_ids": [
+    "720271",
+    "720272",
+    "720273",
+    "720274"
+   ]
+  },
+  {
+   "key": "endurance",
+   "label": "Endurance specialist (synthetic)",
+   "file": "endurance.csv",
+   "declared_race_ids": [
+    "730250",
+    "730251"
+   ]
+  },
+  {
+   "key": "ultra",
+   "label": "Ultra specialist (synthetic)",
+   "file": "ultra.csv",
+   "declared_race_ids": [
+    "740221",
+    "740224",
+    "740222",
+    "740223"
+   ]
+  },
+  {
+   "key": "improving",
+   "label": "Improving runner (synthetic)",
+   "file": "improving.csv",
+   "declared_race_ids": [
+    "750202",
+    "750203",
+    "750204",
+    "750205",
+    "750206",
+    "750207",
+    "750208",
+    "750209",
+    "750210",
+    "750211",
+    "750212",
+    "750213"
+   ]
+  },
+  {
+   "key": "returning",
+   "label": "Returning after inactivity (synthetic)",
+   "file": "returning.csv",
+   "declared_race_ids": [
+    "760124",
+    "760125"
+   ]
+  }
+ ]
+}

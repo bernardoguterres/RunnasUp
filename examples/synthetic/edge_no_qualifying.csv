@@ -1,0 +1,4 @@
+Activity ID,Activity Date,Activity Name,Activity Type,Activity Description,Elapsed Time,Distance,Max Heart Rate,Relative Effort,Commute,Activity Private Note,Activity Gear,Filename,Athlete Weight,Bike Weight,Elapsed Time,Moving Time,Distance,Max Speed,Average Speed,Elevation Gain,Elevation Loss,Average Heart Rate,Perceived Exertion
+5001,"May 3, 2024, 7:00:00 AM",SYNTHETIC Run 5001,Run,,3300,10.00,,,false,synthetic fixture,,,,,3300.0,3250,10000.0,,,,,140,5
+5002,"May 10, 2024, 7:00:00 AM",SYNTHETIC Ride 5002,Ride,,3600,30.00,,,false,synthetic fixture,,,,,3600.0,3550,30000.0,,,,,,
+5003,"May 17, 2024, 7:00:00 AM",SYNTHETIC Walk 5003,Walk,,2700,4.00,,,false,synthetic fixture,,,,,2700.0,2600,4000.0,,,,,,
