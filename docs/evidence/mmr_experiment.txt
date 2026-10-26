@@ -1,0 +1,253 @@
+RunnasUP Running MMR experiment (mmr-envelope-v2, mmr-scale-v1). SYNTHETIC data only.
+Scale: 10 km-equivalent 2:00:00 = 0, 26:00 = 3000 (log of speed; ~19.6 points per 1 %% speed).
+
+== 1. Controlled scenarios (expected direction written before computing) ==
+   id   expected      A (weighted mean)       B (envelope, chosen)    scenario
+   S1   same           1924.0-> 1712.8 down  FAIL   1924.0-> 1924.0 same  ok   easy run after a strong performance
+        why: an easy run is weaker evidence, not evidence of lower ability
+   S2   up             1924.0-> 1975.2 up    ok    1924.0-> 2013.1 up    ok   comparable improved performance
+        why: a faster comparable run is new evidence of higher ability
+   S3a  same           1924.0-> 1854.8 down  FAIL   1924.0-> 1924.0 same  ok   repeated comparable weaker runs, effort unknown
+        why: without effort labels, slower runs are treated cautiously (no decline)
+   S3b  same           1924.0-> 1854.8 down  FAIL   1924.0-> 1924.0 same  ok   repeated comparable weaker runs declared hard
+        why: v2 (user direction 2026-10-22): effort labels are context only; v1 expected 'down' (cap)
+   S4   same           1924.0-> 1895.2 down  FAIL   1924.0-> 1924.0 same  ok   longer but slower run (half marathon)
+        why: 1:42 for 21.1 km converts to 46:14, slower than 45:00: no change, no penalty
+   S5   same           1924.0-> 1865.9 down  FAIL   1924.0-> 1924.0 same  ok   hilly run slower than flat
+        why: hilly run flagged and unadjusted; it cannot lower the estimate
+   S6   same           1924.0-> 1900.5 down  FAIL   1924.0-> 1924.0 same  ok   missing or erroneous heart rate
+        why: heart rate is not an input; HR 300 or blank cannot change anything (also checked through the importer)
+   S7   same           1924.0-> 1257.7 down  FAIL   1924.0-> 1924.0 same  ok   100 easy uploads
+        why: more uploads or more distance never add points
+   S8a  same           1924.0-> 1924.0 same  ok    1924.0-> 1924.0 same  ok   duplicate recording of the best run
+        why: a second copy of the same effort adds nothing
+   S8b  up             1675.3-> 1702.2 up    ok    1715.8-> 1756.9 up    ok   split session: two 5 km halves vs the whole 10 km
+        why: the whole 10 km in 49:00 (10 km-eq 49:00) beats either half (50:02)
+   S9   up             1838.7-> 1887.7 up    ok    1838.7-> 1968.0 up    ok   late import of an earlier strong run
+        why: evidence imported late still counts from its own date
+   S10  same           1924.0-> 1924.0 same  ok    1924.0-> 1924.0 same  ok   single implausible run (10 km in 20:00)
+        why: implausibly fast runs are rejected
+   S11  insufficient        -->      - insufficient ok         -->      - insufficient ok   only a 100-mile ultra
+        why: ultra distances are kept as evidence but not converted: no confident MMR
+   S12  down           1924.0->      - insufficient FAIL   1924.0-> 1763.9 down  ok   inactivity after one strong run (evaluated 200 days later)
+        why: documented recency assumption: aged evidence counts slower; evidence coverage low
+   S13  insufficient   1924.0->      - insufficient ok    1924.0->      - insufficient ok   inactivity beyond 365 days
+        why: no evidence in the window: insufficient evidence, not a measured decline
+
+   Candidate A fails: S1, S3a, S3b, S4, S5, S6, S7, S12
+   Candidate B fails: none
+
+== 2. Synthetic histories (imported through the real importer) ==
+   Generator assumptions (not evidence about real runners): true 10 km time per archetype; personal
+   exponent; 80 % easy runs at 1.15-1.35 x race pace, 20 % tempo at 1.05-1.10, declared races at
+   0.995-1.01; 15 % hilly runs (+0.25 % time per m/km climbing); 20 % missing HR, 2 % HR = 300.
+
+-- Beginner (synthetic): 134 activities stored (0 rejected rows), 134 informative; true 10 km 1:10:00 -> 1:02:01
+   month-end   MMR    10k-eq   coverage    support  inf90d  set by
+   2025-01-31   916.6   1:15:12  low               1      11  700004 4.05 km
+   2025-02-28   910.1   1:15:27  low               1      18  700004 4.05 km
+   2025-03-31   970.1   1:13:11  medium            2      27  700020 3.5 km
+   2025-04-30   946.8   1:14:03  medium            2      25  700020 3.5 km
+   2025-05-31  1050.1   1:10:15  medium            2      30  700047 5.31 km
+   2025-06-30  1047.3   1:10:21  medium            3      35  700047 5.31 km
+   2025-07-31  1066.3   1:09:41  medium            6      38  700070 5.77 km
+   2025-08-31  1062.7   1:09:48  medium            4      33  700070 5.77 km
+   2025-09-30  1078.0   1:09:16  medium            5      29  700090 5.69 km
+   2025-10-31  1104.1   1:08:21  medium            3      32  700101 4.76 km
+   2025-11-30  1173.2   1:05:59  medium            4      40  700120 5.34 km
+   2025-12-31  1213.1   1:04:39  medium            3      41  700128 3.49 km
+   59 recorded changes; the first three and last two explained:
+     2025-01-08 525.9: First estimate: activity 700000 (4.48 km in 39:11) gives a 10 km-equivalent of 1:31:47.
+     2025-01-11 712.9: New best evidence: activity 700001 (5.56 km in 44:47, 10 km-equivalent 1:23:26).
+     2025-01-16 716.5: New best evidence: activity 700003 (3.56 km in 27:52, 10 km-equivalent 1:23:17). Evidence coverage: low → medium (no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it).
+     2025-11-30 1173.2: New best evidence: activity 700120 (5.34 km in 33:56, 10 km-equivalent 1:05:59).
+     2025-12-15 1213.1: New best evidence: activity 700128 (3.49 km in 21:11, 10 km-equivalent 1:04:39).
+   distance evidence: 3–7 km n=134 best 1:04:39
+
+-- Consistent recreational (synthetic): 194 activities stored (0 rejected rows), 193 informative; true 10 km 50:00 -> 50:00
+   not informative: possible duplicate of activity 710010 x1
+   month-end   MMR    10k-eq   coverage    support  inf90d  set by
+   2025-01-31  1577.2     53:42  medium            3      15  710012 11.42 km
+   2025-02-28  1573.5     53:48  medium            4      27  710012 11.42 km
+   2025-03-31  1569.6     53:55  medium            7      49  710043 11.63 km
+   2025-04-30  1568.8     53:56  medium           10      49  710059 5.94 km
+   2025-05-31  1693.9     50:36  low               1      51  710191 10 km
+   2025-06-30  1664.7     51:21  low               1      46  710191 10 km
+   2025-07-31  1635.0     52:08  medium            2      47  710191 10 km
+   2025-08-31  1605.7     52:56  medium            8      51  710191 10 km
+   2025-09-30  1598.8     53:07  medium            8      56  710129 11.61 km
+   2025-10-31  1681.0     50:56  low               1      50  710192 10 km
+   2025-11-30  1677.5     51:02  low               1      47  710192 10 km
+   2025-12-31  1647.4     51:49  low               1      40  710192 10 km
+   138 recorded changes; the first three and last two explained:
+     2025-01-03 1382.6: First estimate: activity 710000 (8.39 km in 49:14) gives a 10 km-equivalent of 59:18.
+     2025-01-06 1382.6: No change: no new evidence beats the current estimate. Evidence coverage: low → medium (no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it).
+     2025-01-08 1521.1: New best evidence: activity 710005 (10.22 km in 56:33, 10 km-equivalent 55:16). Evidence coverage: medium → low (only one observation supports this level).
+     2025-12-30 1649.0: Recency assumption: evidence from activity 710192 is 63 days old, so it counts 1.65 % slower than recorded.
+     2025-12-31 1647.4: Recency assumption: evidence from activity 710192 is 65 days old, so it counts 1.73 % slower than recorded.
+   distance evidence: 3–7 km n=65 best 53:13; 7–15 km n=128 best 50:35
+
+-- Fast short-distance (synthetic): 275 activities stored (0 rejected rows), 275 informative; true 10 km 34:00 -> 34:00
+   month-end   MMR    10k-eq   coverage    support  inf90d  set by
+   2025-01-31  2323.7     36:42  medium            3      22  720005 10.79 km
+   2025-02-28  2348.8     36:14  medium            4      33  720032 10.61 km
+   2025-03-31  2357.1     36:05  high              5      55  720040 9.31 km
+   2025-04-30  2394.7     35:24  medium            2      58  720056 5.5 km
+   2025-05-31  2503.0     33:30  low               1      65  720272 5 km
+   2025-06-30  2502.4     33:30  low               1      74  720272 5 km
+   2025-07-31  2472.2     34:02  high              2      81  720272 5 km
+   2025-08-31  2515.2     33:17  low               1      82  720273 5 km
+   2025-09-30  2512.7     33:20  low               1      72  720273 5 km
+   2025-10-31  2482.5     33:51  low               1      60  720273 5 km
+   2025-11-30  2453.8     34:21  high              2      66  720273 5 km
+   2025-12-31  2424.6     34:52  high              2      72  720273 5 km
+   174 recorded changes; the first three and last two explained:
+     2025-01-01 2099.6: First estimate: activity 720000 (10.36 km in 42:43) gives a 10 km-equivalent of 41:09.
+     2025-01-04 2141.7: New best evidence: activity 720001 (8.52 km in 33:59, 10 km-equivalent 40:16). Evidence coverage: low → medium (no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it).
+     2025-01-10 2323.7: New best evidence: activity 720005 (10.79 km in 39:47, 10 km-equivalent 36:42). Evidence coverage: medium → low (only one observation supports this level).
+     2025-12-31 2424.8: Recency assumption: evidence from activity 720273 is 124 days old, so it counts 4.72 % slower than recorded.
+     2025-12-31 2424.6: Recency assumption: evidence from activity 720273 is 125 days old, so it counts 4.73 % slower than recorded.
+   distance evidence: 3–7 km n=110 best 33:17; 7–15 km n=165 best 34:55
+
+-- Endurance specialist (synthetic): 252 activities stored (0 rejected rows), 252 informative; true 10 km 40:00 -> 40:00
+   month-end   MMR    10k-eq   coverage    support  inf90d  set by
+   2025-01-31  2054.9     42:06  low               1      21  730013 25.12 km
+   2025-02-28  2071.0     41:45  medium            5      38  730036 18.11 km
+   2025-03-31  2063.1     41:55  medium            4      57  730036 18.11 km
+   2025-04-30  2191.4     39:16  low               1      52  730250 21.1 km
+   2025-05-31  2171.3     39:40  low               1      55  730250 21.1 km
+   2025-06-30  2142.4     40:15  low               1      57  730250 21.1 km
+   2025-07-31  2112.9     40:52  low               1      60  730250 21.1 km
+   2025-08-31  2097.9     41:11  medium            5      60  730139 30.64 km
+   2025-09-30  2080.8     41:32  medium            8      66  730150 28.74 km
+   2025-10-31  2200.4     39:05  low               1      72  730251 42.2 km
+   2025-11-30  2187.1     39:21  low               1      73  730251 42.2 km
+   2025-12-31  2157.1     39:57  low               1      71  730251 42.2 km
+   184 recorded changes; the first three and last two explained:
+     2025-01-01 1727.0: First estimate: activity 730000 (8.29 km in 40:47) gives a 10 km-equivalent of 49:45.
+     2025-01-01 1747.4: New best evidence: activity 730001 (8 km in 38:52, 10 km-equivalent 49:14). Evidence coverage: low → medium (no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it).
+     2025-01-05 1772.2: New best evidence: activity 730004 (18.03 km in 1:30:49, 10 km-equivalent 48:37).
+     2025-12-31 2157.7: Recency assumption: evidence from activity 730251 is 74 days old, so it counts 2.20 % slower than recorded.
+     2025-12-31 2157.1: Recency assumption: evidence from activity 730251 is 75 days old, so it counts 2.23 % slower than recorded.
+   distance evidence: 7–15 km n=66 best 42:16; 15–30 km n=163 best 39:16; 30–42.5 km n=23 best 39:05
+
+-- Ultra specialist (synthetic): 225 activities stored (0 rejected rows), 222 informative; true 10 km 46:00 -> 46:00
+   not informative: longer than 42.5 km x3
+   month-end   MMR    10k-eq   coverage    support  inf90d  set by
+   2025-01-31  1795.0     48:03  low               1      17  740010 21.26 km
+   2025-02-28  1827.7     47:16  medium            2      30  740024 23.33 km
+   2025-03-31  1810.3     47:41  medium            3      41  740024 23.33 km
+   2025-04-30  1854.9     46:37  medium            6      43  740045 29.83 km
+   2025-05-31  1836.1     47:04  medium            8      52  740045 29.83 km
+   2025-06-30  1952.7     44:21  low               1      70  740224 42.2 km
+   2025-07-31  1951.1     44:23  low               1      69  740224 42.2 km
+   2025-08-31  1921.0     45:04  low               1      65  740224 42.2 km
+   2025-09-30  1892.2     45:44  low               1      57  740224 42.2 km
+   2025-10-31  1863.0     46:25  medium            4      52  740224 42.2 km
+   2025-11-30  1864.4     46:23  medium            4      60  740191 34.61 km
+   2025-12-31  1846.6     46:49  medium            6      50  740191 34.61 km
+   169 recorded changes; the first three and last two explained:
+     2025-01-05 1516.8: First estimate: activity 740000 (20.67 km in 1:59:34) gives a 10 km-equivalent of 55:23.
+     2025-01-06 1516.9: New best evidence: activity 740001 (21.84 km in 2:06:45, 10 km-equivalent 55:23). Evidence coverage: low → medium (no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it).
+     2025-01-07 1555.9: New best evidence: activity 740002 (29.38 km in 2:50:09, 10 km-equivalent 54:17).
+     2025-12-31 1846.7: Recency assumption: evidence from activity 740191 is 48 days old, so it counts 0.90 % slower than recorded.
+     2025-12-31 1846.6: Recency assumption: evidence from activity 740191 is 48 days old, so it counts 0.91 % slower than recorded.
+   distance evidence: 7–15 km n=44 best 48:01; 15–30 km n=127 best 46:37; 30–42.5 km n=50 best 44:21; over 42.5 km (ultra; not converted) n=3 fastest 4:52/km
+
+-- Improving runner (synthetic): 214 activities stored (0 rejected rows), 214 informative; true 10 km 55:00 -> 45:02
+   month-end   MMR    10k-eq   coverage    support  inf90d  set by
+   2025-01-31  1532.7     54:56  low               1      16  750202 10 km
+   2025-02-28  1553.7     54:21  high              2      34  750203 5 km
+   2025-03-31  1544.3     54:36  high              3      47  750203 5 km
+   2025-04-30  1603.3     53:00  low               1      46  750205 5 km
+   2025-05-31  1592.9     53:16  high              3      48  750205 5 km
+   2025-06-30  1686.0     50:48  low               1      52  750207 5 km
+   2025-07-31  1674.7     51:06  high              3      55  750207 5 km
+   2025-08-31  1718.5     49:58  low               1      56  750209 5 km
+   2025-09-30  1773.0     48:36  low               1      59  750210 10 km
+   2025-10-31  1802.1     47:53  high              2      56  750211 5 km
+   2025-11-30  1863.2     46:25  low               1      54  750212 10 km
+   2025-12-31  1868.7     46:17  high              2      56  750213 5 km
+   78 recorded changes; the first three and last two explained:
+     2025-01-05 988.0: First estimate: activity 750000 (9.67 km in 1:09:59) gives a 10 km-equivalent of 1:12:31.
+     2025-01-10 1056.2: New best evidence: activity 750001 (5.8 km in 39:19, 10 km-equivalent 1:10:02).
+     2025-01-14 1189.0: New best evidence: activity 750002 (7.39 km in 47:30, 10 km-equivalent 1:05:27).
+     2025-11-17 1863.2: New best evidence: activity 750212 (10 km in 46:25, 10 km-equivalent 46:25).
+     2025-12-17 1868.7: New best evidence: activity 750213 (5 km in 22:12, 10 km-equivalent 46:17). Evidence coverage: low → high (a recent declared hard effort agrees within 3 %).
+   distance evidence: 3–7 km n=70 best 46:17; 7–15 km n=144 best 46:25
+
+-- Returning after inactivity (synthetic): 126 activities stored (0 rejected rows), 126 informative; true 10 km 42:00 -> 48:00
+   month-end   MMR    10k-eq   coverage    support  inf90d  set by
+   2025-01-31  1934.8     44:45  medium            2      20  760016 6.06 km
+   2025-02-28  1930.8     44:51  low               1      31  760016 6.06 km
+   2025-03-31  1906.6     45:24  high              4      55  760124 10 km
+   2025-04-30  1940.1     44:38  medium            5      46  760058 12.46 km
+   2025-05-31  1930.4     44:51  medium            3      33  760058 12.46 km
+   2025-06-30  1901.4     45:31  medium            3      11  760058 12.46 km
+   2025-07-31  1871.8     46:13  medium            3       0  760058 12.46 km
+   2025-08-31  1842.6     46:54  medium            3       0  760058 12.46 km
+   2025-09-30  1814.8     47:34  medium            4       3  760058 12.46 km
+   2025-10-31  1786.5     48:16  low               4      22  760058 12.46 km
+   2025-11-30  1759.5     48:56  low               4      39  760058 12.46 km
+   2025-12-31  1732.0     49:38  low               5      56  760058 12.46 km
+   125 recorded changes; the first three and last two explained:
+     2025-01-01 1853.6: First estimate: activity 760000 (11.09 km in 52:03) gives a 10 km-equivalent of 46:39.
+     2025-01-08 1885.1: New best evidence: activity 760007 (10.39 km in 47:48, 10 km-equivalent 45:54). Evidence coverage: low → medium (no recent declared maximal effort confirms it; ability may be higher or the conversion may misjudge it).
+     2025-01-25 1934.8: New best evidence: activity 760016 (6.06 km in 26:19, 10 km-equivalent 44:45).
+     2025-12-31 1732.3: Recency assumption: evidence from activity 760058 is 253 days old, so it counts 11.17 % slower than recorded.
+     2025-12-31 1732.0: Recency assumption: evidence from activity 760058 is 254 days old, so it counts 11.19 % slower than recorded.
+   distance evidence: 3–7 km n=15 best 44:45; 7–15 km n=109 best 44:38
+
+== 3. Sensitivity (as of 2025-12-31; synthetic cohort) ==
+   baseline order: speed 2425 > endurance 2157 > improving 1869 > ultra 1847 > returning 1732 > recreational 1647 > beginner 1213
+   aging_per_day    = 0       max |dMMR| 208.1  pair order swaps 2  [speed +91, endurance +43, improving +0, ultra +106, returning +208, recreational +47, beginner +0]
+   aging_per_day    = 0.00025 max |dMMR| 101.3  pair order swaps 1  [speed +45, endurance +22, improving +0, ultra +32, returning +101, recreational +17, beginner +0]
+   aging_per_day    = 0.001   max |dMMR|  43.5  pair order swaps 0  [speed -12, endurance -42, improving +0, ultra -18, returning -43, recreational -33, beginner +0]
+   grace_days       = 0       max |dMMR|  28.9  pair order swaps 0  [speed -28, endurance -29, improving -14, ultra -29, returning -26, recreational -29, beginner -16]
+   grace_days       = 60      max |dMMR|  29.1  pair order swaps 0  [speed +28, endurance +29, improving +0, ultra +18, returning +27, recreational +29, beginner +0]
+   riegel_k         = 1.03    max |dMMR|  84.7  pair order swaps 0  [speed +41, endurance -85, improving +41, ultra -71, returning -7, recreational +0, beginner +62]
+   riegel_k         = 1.1     max |dMMR| 113.0  pair order swaps 1  [speed -7, endurance +113, improving -20, ultra +97, returning +17, recreational +0, beginner -83]
+
+== 4. Separation from race Elo ==
+   runrank/mmr.py imports: ['math']
+   race Elo (runrank/elo.py, races.py) was archived on 2026-10-25 (archive/); nothing in runrank imports it (asserted in tests/test_mmr.py)
+
+== 5. Effort-cap challenge (mmr-envelope-v2: the cap was removed in v2, so every label case should show no change) ==
+   C1 same history, 52:00 run unlabelled vs honestly labelled hard: 1924.0 low vs 1924.0 low -> withholding the label gains +0.0 points
+   C2 ONE declared 47:00 vs THREE declared 47:00: 1924.0 low vs 1924.0 low -> no difference; under v1 one declared effort sufficed to lower MMR
+   C3 one poor declared race (50:00) after 45:00: 1924.0 low; followed by a normal 46:00 run: 1924.0 medium; followed only by easy runs, day 120: 1837.6 low
+   C4 declared 46:00 then later declared 49:00: 1924.0 high (v1: the later, weaker one set the cap); input order reversed: 1924.0 high (identical: the start time decides, not import order)
+   C5 annotation corrected later (49:00 label removed): 1924.0 high -> the whole history is reconstructed
+   C6 hilly 199 vs 200 m gain on 10 km, same declared 50:00: 1924.0 low vs 1924.0 low -> step of 0.0 points
+   C7 declared marathon 229.9 vs 230.1 min: 1924.0 low vs 1924.0 low -> step of 0.0 points
+   v2: no label can lower (or raise) MMR; v1 results for these cases are recorded in docs/RATING_METHOD.md §A12.
+
+== 6. Frozen-method robustness (scenarios not used to choose the method) ==
+   frozen parameters unchanged: True
+   R1   FAIL  noisy GPS distance (sd 2 %) on 30 identical efforts at 1.04 x race pace
+        intended: estimate within 1 % (about 20 points) of the noise-free value; MMR 1900.6 vs reference 1847.0 (+53.6)
+   R2   FAIL  downhill-assisted 10 km (4 % faster than ability; descent not recorded)
+        intended: MMR not above flat ability; MMR 2004.0 vs true 1924.0 (+80.1)
+   R3   FAIL  short fast 3 km segment saved separately (speed type, true k 1.10)
+        intended: MMR not above true 10 km ability; MMR 2018.4 vs true 1924.0 (+94.5)
+   R4a  FAIL  endurance type (k 1.02), race-effort half marathons only
+        intended: within 2 % (about 39 points) of true; MMR 1982.5 vs reference 1924.0 (+58.6)
+   R4b  FAIL  speed type (k 1.12), race-effort 5 km only
+        intended: within 2 % (about 39 points) of true; MMR 2005.5 vs reference 1924.0 (+81.6)
+   R5   PASS  honest race labels on below-par races vs no labels
+        intended: labelling never costs more than 1 % (about 20 points) vs withholding; MMR 1914.2 vs reference 1914.2 (+0.0)
+   R6   PASS  long gap (200 days), return at true 50:00 with easy running only
+        intended: not more than 3 % (about 59 points) above the new true ability; MMR 1737.0 vs reference 1717.3 (+19.7)
+   R7   PASS  easy-only runner (1.20-1.30 x race pace), no labels
+        intended: under-estimate allowed, but evidence coverage not 'high'; MMR 1564.9 vs true 1924.0 (-359.0), coverage medium
+   R8   PASS  declared race at 19.9 vs 20.0 m/km climbing
+        intended: a 1 m change moves MMR by less than 5 points; MMR 1924.0 vs reference 1924.0 (+0.0)
+   4 PASS, 5 FAIL
+
+   Sensitivity of the deviations above (points vs reference; R7 vs true ability):
+   variant                       R1      R2      R3     R4a     R4b      R5      R6      R7      R8
+   frozen                     +53.6   +80.1   +94.5   +58.6   +81.6    +0.0   +19.7  -359.0    +0.0
+   aging_per_day=0            +62.4   +80.1   +94.5   +58.6   +81.6    +0.0  +206.7  -359.0    +0.0
+   aging_per_day=0.001        +44.8   +80.1   +94.5   +58.6   +81.6    +0.0  -151.0  -359.0    +0.0
+   riegel_k=1.03              +51.8   +80.1  +165.3   +14.6  +122.4    +0.0   +19.7  -345.9    +0.0
+   riegel_k=1.1               +55.9   +80.1    +0.0  +117.2   +27.2    +0.0   +19.7  -376.6    +0.0
