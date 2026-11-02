@@ -201,18 +201,28 @@ export function ImportPage() {
   const [historyNonce, setHistoryNonce] = useState(0);
   const previewSeq = useRef(0);
 
-  function reset() {
-    previewSeq.current++;
-    setFile(null);
+  /** Forgets everything derived from the previously chosen file. */
+  function clearOutcome() {
     setPreview(null);
-    setPreviewing(false);
     setPreviewError(null);
     setSubmitError(null);
     setDuplicateOf(null);
     setConfirmRepeat(false);
     setResult(null);
+  }
+
+  function reset() {
+    previewSeq.current++;
+    clearOutcome();
+    setFile(null);
+    setPreviewing(false);
     setDoneFor(null);
     if (fileInput.current) fileInput.current.value = "";
+  }
+
+  function selectNewRunner(p: { id: number }) {
+    setParticipantId(p.id);
+    reloadParticipants();
   }
 
   // switching runner discards the chosen file and preview
@@ -223,12 +233,7 @@ export function ImportPage() {
   async function choose(f: File | null, corrections = applyCorrections) {
     const seq = ++previewSeq.current;
     setFile(f);
-    setPreview(null);
-    setPreviewError(null);
-    setSubmitError(null);
-    setDuplicateOf(null);
-    setConfirmRepeat(false);
-    setResult(null);
+    clearOutcome();
     if (!f || participantId === null) return;
     setPreviewing(true);
     try {
@@ -301,23 +306,13 @@ export function ImportPage() {
                 <RunnerOptions participants={participants} />
               </select>
               {participant ? <KindTag kind={participant.data_kind} /> : null}
-              <AddRunner
-                onCreated={(p) => {
-                  setParticipantId(p.id);
-                  reloadParticipants();
-                }}
-              />
+              <AddRunner onCreated={selectNewRunner} />
             </div>
           </div>
         ) : participants ? (
           <>
             <p>No runners yet. Add one to import into.</p>
-            <AddRunner
-              onCreated={(p) => {
-                setParticipantId(p.id);
-                reloadParticipants();
-              }}
-            />
+            <AddRunner onCreated={selectNewRunner} />
           </>
         ) : (
           <Loading rows={1} />

@@ -141,7 +141,7 @@ export function MmrOverviewPage() {
           columns={[
             { key: "t", header: "When (UTC)", render: (c) => formatDateTimeUTC(c.at_utc) },
             { key: "m", header: "MMR", align: "right", render: (c) => <Val value={fmtMmr(c.mmr)} label="insufficient evidence" /> },
-            { key: "c", header: "Evidence coverage", render: (c) => <CoverageBadge status={c.status} /> },
+            { key: "c", header: "Evidence coverage", render: (c) => <CoverageBadge status={c.status} plain /> },
             { key: "e", header: "Why", render: (c) => c.explanation.join(" ") },
             {
               key: "x",
@@ -284,7 +284,7 @@ export function MmrComparePage() {
                     },
                     { key: "m", header: "Running MMR", align: "right", sortValue: (r) => r.estimate.mmr, render: (r) => <Val value={fmtMmr(r.estimate.mmr)} label="insufficient evidence" /> },
                     { key: "t", header: "10 km-equivalent", align: "right", render: (r) => <Val value={r.estimate.t10_display} label="—" /> },
-                    { key: "c", header: "Evidence coverage", render: (r) => <CoverageBadge status={r.estimate.status} /> },
+                    { key: "c", header: "Evidence coverage", render: (r) => <CoverageBadge status={r.estimate.status} plain /> },
                     { key: "s", header: "Supporting runs", align: "right", render: (r) => r.estimate.supporting },
                     { key: "a", header: "As of (UTC)", render: (r) => formatDateUTC(r.estimate.as_of_utc) },
                   ]}

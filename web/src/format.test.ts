@@ -55,3 +55,10 @@ describe("format helpers", () => {
     expect(addDaysUTC("2024-03-01", -1)).toBe("2024-02-29");
   });
 });
+
+describe("formatPace unit", () => {
+  it("carries the /km unit exactly once, so callers must not append it", () => {
+    expect(formatPace(364)).toBe("6:04 /km");
+    expect(formatPace(null)).toBeNull();
+  });
+});

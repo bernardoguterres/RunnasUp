@@ -77,7 +77,7 @@ function columns(open: Set<string>, toggle: (id: string) => void): Column<Activi
       header: "Elapsed pace",
       align: "right",
       sortValue: (r) => r.pace_s_per_km,
-      render: (r) => `${formatPace(r.pace_s_per_km)} /km`,
+      render: (r) => <Val value={formatPace(r.pace_s_per_km)} />,
     },
     {
       key: "elapsed",
@@ -109,7 +109,7 @@ function Detail({ r }: { r: ActivityRow }) {
       <dl className="detail-grid">
         <div><dt>Date and time (UTC)</dt><dd>{formatDateTimeUTC(r.start_utc)}</dd></div>
         <div><dt>Moving time</dt><dd><Val value={formatDuration(r.moving_s)} /></dd></div>
-        <div><dt>Moving pace</dt><dd><Val value={r.moving_pace_s_per_km === null ? null : `${formatPace(r.moving_pace_s_per_km)} /km`} /></dd></div>
+        <div><dt>Moving pace</dt><dd><Val value={formatPace(r.moving_pace_s_per_km)} /></dd></div>
         <div><dt>Avg heart rate</dt><dd><Val value={r.avg_hr === null ? null : `${Math.round(r.avg_hr)} bpm`} /></dd></div>
         <div><dt>Elevation gain</dt><dd><Val value={r.elevation_gain_m === null ? null : `${Math.round(r.elevation_gain_m)} m`} /></dd></div>
         <div><dt>Effort label</dt><dd>{r.effort}</dd></div>
@@ -279,28 +279,19 @@ function ExplorerBody({ pid, label }: { pid: number; label: string }) {
         <fieldset className="daterange">
           <legend className="field__label">Distance (km)</legend>
           <div className="daterange__inputs">
-            <label className="field field--inline">
-              <span>Min</span>
-              <input
-                type="number"
-                inputMode="decimal"
-                min={0}
-                step="0.1"
-                value={f.min_km}
-                onChange={(e) => update({ min_km: e.target.value }, true)}
-              />
-            </label>
-            <label className="field field--inline">
-              <span>Max</span>
-              <input
-                type="number"
-                inputMode="decimal"
-                min={0}
-                step="0.1"
-                value={f.max_km}
-                onChange={(e) => update({ max_km: e.target.value }, true)}
-              />
-            </label>
+            {(["min_km", "max_km"] as const).map((key) => (
+              <label key={key} className="field field--inline">
+                <span>{key === "min_km" ? "Min" : "Max"}</span>
+                <input
+                  type="number"
+                  inputMode="decimal"
+                  min={0}
+                  step="0.1"
+                  value={f[key]}
+                  onChange={(e) => update({ [key]: e.target.value }, true)}
+                />
+              </label>
+            ))}
           </div>
         </fieldset>
         {hasFilters ? (

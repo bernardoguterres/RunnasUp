@@ -101,7 +101,7 @@ describe("Running MMR", () => {
     const rows = within(table).getAllByRole("row").slice(1);
     const endurance = rows.find((r) => within(r).queryByText(/Endurance specialist/))!;
     expect(within(endurance).getByText("unranked")).toBeTruthy();
-    expect(within(endurance).getByText("Low evidence coverage")).toBeTruthy();
+    expect(within(endurance).getByTitle("Low evidence coverage").textContent).toContain("Low");
     expect(screen.getByText(/adding a runner never changes anyone else's number/)).toBeTruthy();
   });
 

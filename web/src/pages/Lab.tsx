@@ -132,7 +132,7 @@ const PARAM_INFO: Record<string, { label: string; primary?: boolean; option: (v:
   },
   walk_ref_pace_s: {
     label: "Walking reference pace",
-    option: (v) => `${formatPace(Number(v))} /km`,
+    option: (v) => formatPace(Number(v)) ?? String(v),
     help: "Endurance credit falls from full to none across this pace ±10 % (moving pace), relaxed slightly with distance (× (km / 10)^0.10).",
   },
   continuity: {

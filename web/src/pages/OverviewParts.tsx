@@ -14,21 +14,22 @@ import { formatDateTimeUTC, formatDateUTC, formatDuration, formatKm, formatPace 
 import { useApi } from "../hooks/useApi";
 import { activityPath } from "../links";
 
-const CONF: Record<MmrStatus, { text: string; glyph: string; cls: string }> = {
-  high: { text: "High evidence coverage", glyph: "●", cls: "badge--success" },
-  medium: { text: "Medium evidence coverage", glyph: "◑", cls: "badge--info" },
-  low: { text: "Low evidence coverage", glyph: "◔", cls: "badge--warning" },
-  "insufficient evidence": { text: "Insufficient evidence", glyph: "○", cls: "badge--neutral" },
+const CONF: Record<MmrStatus, { text: string; short: string; glyph: string; cls: string }> = {
+  high: { text: "High evidence coverage", short: "High", glyph: "●", cls: "badge--success" },
+  medium: { text: "Medium evidence coverage", short: "Medium", glyph: "◑", cls: "badge--info" },
+  low: { text: "Low evidence coverage", short: "Low", glyph: "◔", cls: "badge--warning" },
+  "insufficient evidence": { text: "Insufficient evidence", short: "Insufficient", glyph: "○", cls: "badge--neutral" },
 };
 
-export function CoverageBadge({ status }: { status: MmrStatus }) {
+/** `plain` drops the pill and the repeated "evidence coverage" wording, for table cells under that column. */
+export function CoverageBadge({ status, plain = false }: { status: MmrStatus; plain?: boolean }) {
   const c = CONF[status];
   return (
-    <span className={`badge ${c.cls}`}>
+    <span className={`badge ${c.cls}${plain ? " badge--plain" : ""}`} title={plain ? c.text : undefined}>
       <span aria-hidden="true" className="badge__glyph">
         {c.glyph}
       </span>
-      {c.text}
+      {plain ? c.short : c.text}
     </span>
   );
 }
@@ -267,7 +268,7 @@ export function BehindScore({ o }: { o: MmrOverview }) {
           <p className="small muted">{s.activity_type} · {formatDateUTC(s.start_utc)}</p>
           <p className="stat-big num">{formatKm(s.distance_m)}</p>
           <p className="small">
-            {formatDuration(s.elapsed_s)} elapsed · {formatPace((s.elapsed_s / s.distance_m) * 1000)} /km
+            {formatDuration(s.elapsed_s)} elapsed · {formatPace((s.elapsed_s / s.distance_m) * 1000)}
             {s.t10_s !== null ? ` · 10 km-equivalent ${formatDuration(s.t10_s)}` : ""}
           </p>
           <p className="small">
@@ -324,7 +325,7 @@ export function RecentActivities({ pid, to }: { pid: number; to: string | undefi
             { key: "t", header: "Type", render: (a) => a.type },
             { key: "d", header: "Date (UTC)", render: (a) => formatDateUTC(a.start_utc) },
             { key: "k", header: "Distance", align: "right", render: (a) => formatKm(a.distance_m) },
-            { key: "p", header: "Elapsed pace", align: "right", render: (a) => `${formatPace(a.pace_s_per_km)} /km` },
+            { key: "p", header: "Elapsed pace", align: "right", render: (a) => <Val value={formatPace(a.pace_s_per_km)} /> },
             { key: "e", header: "Elapsed", align: "right", render: (a) => formatDuration(a.elapsed_s) },
           ]}
         />
