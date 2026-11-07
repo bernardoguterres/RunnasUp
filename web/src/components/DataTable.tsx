@@ -34,6 +34,8 @@ interface Props<T> {
   detail?: (row: T) => ReactNode | null;
   /** id prefix for detail rows, so a toggle can point at them with aria-controls */
   detailId?: (row: T) => string;
+  /** For tables wider than the page: keep the first column in view while the rest scrolls sideways. */
+  stickyFirstColumn?: boolean;
 }
 
 function compare(a: string | number | null, b: string | number | null): number {
@@ -57,6 +59,7 @@ export function DataTable<T>({
   rowClassName,
   detail,
   detailId,
+  stickyFirstColumn,
 }: Props<T>) {
   const [local, setLocal] = useState<SortState | null>(initialSort ?? null);
   const isControlled = controlled !== undefined;
@@ -88,82 +91,103 @@ export function DataTable<T>({
     onSortChange?.(next);
   }
 
-  return (
-    <div className="table-wrap" tabIndex={0} role="region" aria-label={typeof caption === "string" ? caption : undefined}>
-      <table className="table">
-        <caption className={captionHidden ? "visually-hidden" : "table__caption"}>{caption}</caption>
-        <thead>
+  const label = typeof caption === "string" ? caption : undefined;
+  const table = (
+    <table className="table">
+      <caption className={captionHidden || stickyFirstColumn ? "visually-hidden" : "table__caption"}>{caption}</caption>
+      <thead>
+        <tr>
+          {columns.map((c) => {
+            const active = sort?.key === c.key;
+            const ariaSort = c.sortValue
+              ? active
+                ? sort!.dir === "asc"
+                  ? "ascending"
+                  : "descending"
+                : "none"
+              : undefined;
+            return (
+              <th
+                key={c.key}
+                scope="col"
+                aria-sort={ariaSort}
+                className={c.align === "right" ? "is-right" : undefined}
+              >
+                {c.sortValue ? (
+                  <button
+                    type="button"
+                    className="th-sort"
+                    onClick={() => toggle(c.key)}
+                    aria-label={
+                      c.headerLabel
+                        ? `${c.headerLabel}, sort ${active && sort!.dir === "asc" ? "descending" : "ascending"}`
+                        : undefined
+                    }
+                  >
+                    {c.header}
+                    <span aria-hidden="true" className="th-sort__icon">
+                      {active ? (sort!.dir === "asc" ? "▲" : "▼") : "↕"}
+                    </span>
+                  </button>
+                ) : (
+                  c.header
+                )}
+              </th>
+            );
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {sorted.length === 0 ? (
           <tr>
-            {columns.map((c) => {
-              const active = sort?.key === c.key;
-              const ariaSort = c.sortValue
-                ? active
-                  ? sort!.dir === "asc"
-                    ? "ascending"
-                    : "descending"
-                  : "none"
-                : undefined;
-              return (
-                <th
-                  key={c.key}
-                  scope="col"
-                  aria-sort={ariaSort}
-                  className={c.align === "right" ? "is-right" : undefined}
-                >
-                  {c.sortValue ? (
-                    <button
-                      type="button"
-                      className="th-sort"
-                      onClick={() => toggle(c.key)}
-                      aria-label={
-                        c.headerLabel
-                          ? `${c.headerLabel}, sort ${active && sort!.dir === "asc" ? "descending" : "ascending"}`
-                          : undefined
-                      }
-                    >
-                      {c.header}
-                      <span aria-hidden="true" className="th-sort__icon">
-                        {active ? (sort!.dir === "asc" ? "▲" : "▼") : "↕"}
-                      </span>
-                    </button>
-                  ) : (
-                    c.header
-                  )}
-                </th>
-              );
-            })}
+            <td colSpan={columns.length} className="table__empty">
+              {empty ?? "No rows."}
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {sorted.length === 0 ? (
-            <tr>
-              <td colSpan={columns.length} className="table__empty">
-                {empty ?? "No rows."}
-              </td>
-            </tr>
-          ) : (
-            sorted.map((r) => {
-              const extra = detail?.(r) ?? null;
-              return (
-                <Fragment key={rowKey(r)}>
-                  <tr className={rowClassName?.(r)}>
-                    {columns.map((c) => (
-                      <td key={c.key} className={c.align === "right" ? "is-right num" : undefined}>
-                        {c.render(r)}
-                      </td>
-                    ))}
+        ) : (
+          sorted.map((r) => {
+            const extra = detail?.(r) ?? null;
+            return (
+              <Fragment key={rowKey(r)}>
+                <tr className={rowClassName?.(r)}>
+                  {columns.map((c) => (
+                    <td key={c.key} className={c.align === "right" ? "is-right num" : undefined}>
+                      {c.render(r)}
+                    </td>
+                  ))}
+                </tr>
+                {extra !== null ? (
+                  <tr className="table__detail" id={detailId?.(r)}>
+                    <td colSpan={columns.length}>{extra}</td>
                   </tr>
-                  {extra !== null ? (
-                    <tr className="table__detail" id={detailId?.(r)}>
-                      <td colSpan={columns.length}>{extra}</td>
-                    </tr>
-                  ) : null}
-                </Fragment>
-              );
-            })
-          )}
-        </tbody>
-      </table>
+                ) : null}
+              </Fragment>
+            );
+          })
+        )}
+      </tbody>
+    </table>
+  );
+
+  if (!stickyFirstColumn) {
+    return (
+      <div className="table-wrap" tabIndex={0} role="region" aria-label={label}>
+        {table}
+      </div>
+    );
+  }
+  // The visible caption sits above the scroller so it does not slide away with the columns;
+  // the table keeps its own (hidden) caption as its accessible name.
+  return (
+    <div className="table-wrap table-wrap--sticky">
+      {captionHidden ? null : (
+        <p className="table__caption" aria-hidden="true">
+          {caption}
+        </p>
+      )}
+      <div className="table-wrap__scroll" tabIndex={0} role="region" aria-label={label}>
+        {table}
+      </div>
     </div>
   );
 }

@@ -22,6 +22,16 @@ describe("App shell", () => {
     expect(select.value).toBe("1");
   });
 
+  it("lets only the Ratings Lab use the full width", async () => {
+    mockFetch(baseHandlers([]));
+    const { unmount } = renderApp("/lab");
+    expect((await screen.findByRole("main")).classList.contains("main--wide")).toBe(true);
+    unmount();
+    mockFetch(baseHandlers([]));
+    renderApp("/method");
+    expect((await screen.findByRole("main")).classList.contains("main--wide")).toBe(false);
+  });
+
   it("toggles the mobile menu with aria-expanded", async () => {
     const user = userEvent.setup();
     mockFetch(baseHandlers([]));

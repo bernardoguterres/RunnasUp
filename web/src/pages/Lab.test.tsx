@@ -66,6 +66,9 @@ describe("Ratings Lab", () => {
     await user.click(await screen.findByRole("button", { name: "Compare runners" }));
     const table = await screen.findByRole("table", { name: /Combined scores as of/ });
     expect(within(table).getAllByRole("row")).toHaveLength(8);
+    // wider than the page: it scrolls sideways with the runner column kept in view
+    expect(table.closest(".table-wrap--sticky")).not.toBeNull();
+    expect(screen.getByRole("table", { name: /What method B rewards/ }).closest(".table-wrap--sticky")).toBeNull();
     expect(screen.getByText(/Who benefits from more endurance weight/)).toBeTruthy();
     expect(screen.getByText(/ultra runner adds one slow 6 km jog/)).toBeTruthy();
   });

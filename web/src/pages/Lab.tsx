@@ -498,6 +498,7 @@ function Compare() {
     <>
       <DataTable
         caption={`Combined scores as of ${formatDateUTC(d.as_of_utc)} (synthetic runners; fixed scales)`}
+        stickyFirstColumn
         rows={d.rows}
         rowKey={(r) => r.runner}
         columns={[

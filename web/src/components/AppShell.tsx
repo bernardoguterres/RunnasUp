@@ -107,6 +107,9 @@ const TITLES: [RegExp, string][] = [
   [/^\/lab/, "Ratings Lab (experimental)"],
 ];
 
+/** Pages whose tables need more than the usual reading width; every other page stays capped. */
+const WIDE_PAGES = /^\/lab/;
+
 export function pageTitle(pathname: string): string {
   return TITLES.find(([re]) => re.test(pathname))?.[1] ?? "Not found";
 }
@@ -186,7 +189,7 @@ export function AppShell() {
             <ParticipantSelect />
           </div>
         </header>
-        <main id="main" className="main" tabIndex={-1}>
+        <main id="main" className={WIDE_PAGES.test(location.pathname) ? "main main--wide" : "main"} tabIndex={-1}>
           <Outlet />
         </main>
         <footer className="footer">
