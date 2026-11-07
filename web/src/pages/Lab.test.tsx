@@ -36,7 +36,7 @@ describe("Ratings Lab", () => {
     mockFetch(baseHandlers([]), lab(calls));
     renderApp("/lab");
     expect(await screen.findByText("Experimental · changes are not saved.")).toBeTruthy();
-    expect(screen.getByText(/Nothing changes your stored activities, Running MMR or race Elo/)).toBeTruthy();
+    expect(screen.getByText(/Nothing changes your stored activities or Running MMR\./)).toBeTruthy();
     const table = await screen.findByRole("table", { name: /Input history: Beginner/ });
     const eightRow = within(table).getAllByRole("row").find((r) => within(r).queryAllByText("8.00 km").length > 0)!;
     await user.click(within(eightRow).getByRole("button", { name: /Explain activity/ }));

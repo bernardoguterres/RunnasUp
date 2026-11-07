@@ -1,7 +1,7 @@
 /**
  * Ratings Lab (EXPERIMENTAL). Two explicit data sources: built-in synthetic runners, or histories stored in the
  * database this app was started with (read-only on the server). Every number comes from /api/lab/*
- * (runrank/lab_methods.py). Nothing here is saved, and nothing changes personal Running MMR or race Elo.
+ * (runrank/lab_methods.py). Nothing here is saved, and nothing changes personal Running MMR.
  */
 import { useState } from "react";
 import { api } from "../api/client";
@@ -586,7 +586,7 @@ export function LabPage() {
         <h1 className="page__title">Ratings Lab (experimental)</h1>
         <p className="exp-note" role="status">
           <strong>Experimental · changes are not saved.</strong>{" "}
-          <span className="muted">Nothing changes your stored activities, Running MMR or race Elo.</span>
+          <span className="muted">Nothing changes your stored activities or Running MMR.</span>
         </p>
         <details className="disclosure">
           <summary>About these methods and their limitations</summary>

@@ -369,7 +369,7 @@ export interface MmrMethod {
 }
 
 // ================================================================ Ratings Lab (EXPERIMENTAL; synthetic examples or stored histories, read-only)
-// Computed per request by runrank/lab_methods.py; never stored; never touches personal MMR or race Elo.
+// Computed per request by runrank/lab_methods.py; never stored; never touches personal MMR.
 
 export type LabMethod = "A" | "B" | "C" | "D";
 export type LabParams = Record<string, number | string>;
