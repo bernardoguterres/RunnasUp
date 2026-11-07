@@ -7,16 +7,16 @@ are no accounts, no sync and no uploads.
 **Status: working prototype, not validated.**
 - Checked by automated tests, in-process API journeys and one headless-browser pass (Chromium, 1440 px, demo
   database), all on **synthetic** data.
-- **Only partly checked in a browser:** the main pages load without console or network errors and Tab moves
-  through the controls with a visible focus ring. Small screens, other browsers, contrast and the import and
-  annotation flows have not been inspected.
+- **Only partly checked in a browser:** the main pages and the import preview load without console or network errors and Tab moves
+  through the controls with a visible focus ring. Small screens, other browsers, contrast, committing an import and
+  the annotation flows have not been inspected.
 - **No real Strava export has been imported:** the CSV column layout comes from memory of Strava's format and is
   unverified.
 - Every parameter is an uncalibrated assumption.
 
 ## Screenshots
 
-All three use the synthetic demo database; no real activity data is shown.
+All four use the synthetic demo database; no real activity data is shown.
 
 <img src="docs/screenshots/overview.png" alt="RunnasUP Overview page: the Running MMR estimate, a 10 km-equivalent time, training summary, rating history chart and the run behind the current score" width="100%">
 
@@ -29,6 +29,10 @@ All three use the synthetic demo database; no real activity data is shown.
 <img src="docs/screenshots/compare.png" alt="RunnasUP Compare page: seven synthetic demo runners ranked by Running MMR with their 10 km-equivalent time and evidence coverage" width="100%">
 
 <sub>Compare: each runner's own estimate on one fixed scale.</sub>
+
+<img src="docs/screenshots/import-preview.png" alt="RunnasUP Import activities page: a preview of a small synthetic CSV showing 12 rows, 8 that would be inserted and 4 rejected with the reason for each, before anything is stored" width="100%">
+
+<sub>Import: a preview comes first. Nothing is stored until you press Import, and every rejected row says why.</sub>
 
 ## What it does
 - **Import:** a Strava bulk-export `.zip` or its `activities.csv`, with a preview before anything is stored and a
