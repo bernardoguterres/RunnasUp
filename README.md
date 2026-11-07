@@ -16,7 +16,7 @@ are no accounts, no sync and no uploads.
 
 ## Screenshots
 
-All four use the synthetic demo database; no real activity data is shown.
+All five use the synthetic demo database; no real activity data is shown.
 
 <img src="docs/screenshots/overview.png" alt="RunnasUP Overview page: the Running MMR estimate, a 10 km-equivalent time, training summary, rating history chart and the run behind the current score" width="100%">
 
@@ -33,6 +33,10 @@ All four use the synthetic demo database; no real activity data is shown.
 <img src="docs/screenshots/import-preview.png" alt="RunnasUP Import activities page: a preview of a small synthetic CSV showing 12 rows, 8 that would be inserted and 4 rejected with the reason for each, before anything is stored" width="100%">
 
 <sub>Import: a preview comes first. Nothing is stored until you press Import, and every rejected row says why.</sub>
+
+<img src="docs/screenshots/ratings-lab.png" alt="RunnasUP Ratings Lab, Compare runners tab: an experimental table comparing candidate rating methods across synthetic runners, scrolled sideways with the runner column fixed" width="100%">
+
+<sub>Ratings Lab (experimental): candidate methods compared on synthetic runners. The table scrolls sideways; this view is scrolled to the right-hand columns. Nothing here is saved.</sub>
 
 ## What it does
 - **Import:** a Strava bulk-export `.zip` or its `activities.csv`, with a preview before anything is stored and a
