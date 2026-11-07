@@ -5,11 +5,30 @@ A local app that turns one runner's Strava activity history into **Running MMR**
 are no accounts, no sync and no uploads.
 
 **Status: working prototype, not validated.**
-- Checked only by automated tests and in-process API journeys, all on **synthetic** data.
-- **Never operated in a real browser:** layout, keyboard use and charts have not been inspected.
+- Checked by automated tests, in-process API journeys and one headless-browser pass (Chromium, 1440 px, demo
+  database), all on **synthetic** data.
+- **Only partly checked in a browser:** the main pages load without console or network errors and Tab moves
+  through the controls with a visible focus ring. Small screens, other browsers, contrast and the import and
+  annotation flows have not been inspected.
 - **No real Strava export has been imported:** the CSV column layout comes from memory of Strava's format and is
   unverified.
 - Every parameter is an uncalibrated assumption.
+
+## Screenshots
+
+All three use the synthetic demo database; no real activity data is shown.
+
+<img src="docs/screenshots/overview.png" alt="RunnasUP Overview page: the Running MMR estimate, a 10 km-equivalent time, training summary, rating history chart and the run behind the current score" width="100%">
+
+<sub>Overview: the current estimate, the run that set it, and how the estimate has changed.</sub>
+
+<img src="docs/screenshots/activities.png" alt="RunnasUP Activities page: a searchable, filterable, sortable table of stored activities with a CSV download" width="100%">
+
+<sub>Activities: every stored run, with search, filters and CSV export.</sub>
+
+<img src="docs/screenshots/compare.png" alt="RunnasUP Compare page: seven synthetic demo runners ranked by Running MMR with their 10 km-equivalent time and evidence coverage" width="100%">
+
+<sub>Compare: each runner's own estimate on one fixed scale.</sub>
 
 ## What it does
 - **Import:** a Strava bulk-export `.zip` or its `activities.csv`, with a preview before anything is stored and a

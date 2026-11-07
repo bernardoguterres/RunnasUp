@@ -30,8 +30,10 @@ from the app.
 - **Moved, not removed:** the duplicate rule and the training-volume summary now live in
   `runrank/activity_rules.py`. They were checked identical on every demo runner and 2,000 random histories.
 
-**Frontend:** React is the only UI (redesigned and renamed RunnasUP, 2026-10-23). **The visual result is
-unverified**: no browser check has been possible.
+**Frontend:** React is the only UI (redesigned and renamed RunnasUP, 2026-10-23). **Only partly verified
+visually:** on 2026-11-07 the Overview, Activities, Compare, Ratings Lab and Method pages were loaded in headless
+Chromium at 1440 px against the demo database with no console or network errors, and Tab focus was visible.
+390 and 768 px, contrast, downloads, other browsers and the import and annotation flows are still unchecked.
 
 **Name:** the display name is RunnasUP. The compatibility names stay: `runrank/`, `RUNRANK_DB`, database
 filenames, `runrank.*` storage keys and the session lock. `docs/evidence/` and the protected hook keep the old
