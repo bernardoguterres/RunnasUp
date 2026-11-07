@@ -112,7 +112,7 @@ export function MmrOverviewPage() {
               onChange={(e) => setAsOf(e.target.value)} />
           </div>
           <Link className="btn btn--primary btn--lg" to="/import">
-            <Icon name="upload" /> Import history
+            <Icon name="upload" /> Import activities
           </Link>
         </div>
       </header>

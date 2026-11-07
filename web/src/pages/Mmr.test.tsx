@@ -133,7 +133,7 @@ describe("Running MMR", () => {
     const nav = await screen.findByRole("navigation", { name: "Main" });
     await waitFor(() => expect(within(nav).getAllByRole("link").length).toBeGreaterThan(0));
     expect(within(nav).getAllByRole("link").map((l) => l.textContent)).toEqual(
-      ["Overview", "Activities", "Compare", "Import history", "Ratings Lab Experimental", "How Running MMR works"]);
+      ["Overview", "Activities", "Compare", "Import activities", "Ratings Lab Experimental", "How Running MMR works"]);
   });
 
   it("states that ultras are kept but do not contribute to MMR", async () => {

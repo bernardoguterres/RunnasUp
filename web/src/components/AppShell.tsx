@@ -9,7 +9,7 @@ const PRIMARY: NavItem[] = [
   { to: "/", label: "Overview", end: true, icon: "chart" },
   { to: "/activities", label: "Activities", icon: "list" },
   { to: "/mmr/compare", label: "Compare", icon: "bars" },
-  { to: "/import", label: "Import history", icon: "upload" },
+  { to: "/import", label: "Import activities", icon: "upload" },
 ];
 const EXPLORE: NavItem[] = [{ to: "/lab", label: "Ratings Lab", icon: "flask", tag: "Experimental" }];
 type IconName = "chart" | "list" | "bars" | "upload" | "flask" | "help" | "db" | "chev";
