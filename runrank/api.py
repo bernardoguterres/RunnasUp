@@ -322,7 +322,13 @@ def create_app(db_path, demo_mode=False, database="custom", allowed_hosts=("127.
                 raise ApiError(409, "duplicate_file", "this exact file was already imported for this runner; "
                                                       "importing it again only reports duplicates",
                                previous_import=_import_record(con, prev))
-            imp_id = store.import_file(con, pid, name, data, flags["apply_corrections"])
+            try:
+                imp_id = store.import_file(con, pid, name, data, flags["apply_corrections"],
+                                           confirm_repeat=flags["confirm_repeat"])
+            except store.DuplicateFileError as exc:
+                raise ApiError(409, "duplicate_file", "this exact file was already imported for this runner; "
+                                                      "importing it again only reports duplicates",
+                               previous_import=_import_record(con, exc.previous_import))
             imp = con.execute("SELECT * FROM imports WHERE id = ?", (imp_id,)).fetchone()
             return JSONResponse({"import": _import_record(con, imp), "rows": _import_rows(con, imp_id)},
                                 status_code=201)
