@@ -398,12 +398,19 @@ async def _json(request):
     return body
 
 
+def _is_formula(v):
+    if not isinstance(v, str):
+        return False
+    s = v.lstrip(" \t\r\n")
+    return bool(s and s[0] in ("=", "+", "-", "@", "|")) or (v and v[0] in ("\t", "\r", "\n"))
+
+
 def _csv(header, rows, filename):
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(header)
     # cells that a spreadsheet would evaluate as a formula are prefixed with an apostrophe
-    w.writerows([["'" + v if isinstance(v, str) and v[:1] in ("=", "+", "-", "@") else v for v in r]
+    w.writerows([["'" + v if _is_formula(v) else v for v in r]
                  for r in rows])
     return Response(buf.getvalue(), media_type="text/csv; charset=utf-8",
                     headers={"Content-Disposition": 'attachment; filename="%s"' % filename})

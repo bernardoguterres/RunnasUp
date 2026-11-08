@@ -28,7 +28,7 @@ DEFAULT_DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file
                           "data", "runrank.sqlite")
 EFFORTS = ("unknown", "easy", "moderate", "hard", "race")
 CORRECTABLE = ("start_utc", "activity_type", "name", "distance_m", "elapsed_s",
-               "moving_s", "avg_hr", "perceived_exertion")
+               "moving_s", "avg_hr", "perceived_exertion", "elevation_gain_m")
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -435,13 +435,12 @@ def _import_row(con, pid, imp, row, apply_corrections, seen_in_file):
         return "rejected", ("identity collision: Activity ID %s is already stored for another participant;"
                             " not imported (check the file belongs to this runner)" % sid)
     diffs = [f for f in CORRECTABLE if not _same(existing[f], v[f])]
+    if diffs == ["elevation_gain_m"] and existing["elevation_gain_m"] is None and v["elevation_gain_m"] is not None and not apply_corrections:
+        con.execute("UPDATE activities SET elevation_gain_m = ?, last_import_id = ? WHERE id = ?",
+                    (v["elevation_gain_m"], imp, existing["id"]))
+        return "duplicate", "identical to stored activity; missing elevation gain filled (display only)"
     if not diffs:
         con.execute("UPDATE activities SET last_import_id = ? WHERE id = ?", (imp, existing["id"]))
-        # elevation (display only) was not imported before schema 3: fill it once, never overwrite
-        if existing["elevation_gain_m"] is None and v["elevation_gain_m"] is not None:
-            con.execute("UPDATE activities SET elevation_gain_m = ? WHERE id = ?",
-                        (v["elevation_gain_m"], existing["id"]))
-            return "duplicate", "identical to stored activity; missing elevation gain filled (display only)"
         return "duplicate", "identical to stored activity; nothing changed"
     change = ", ".join("%s: %r -> %r" % (f, existing[f], v[f]) for f in diffs)
     if not apply_corrections:

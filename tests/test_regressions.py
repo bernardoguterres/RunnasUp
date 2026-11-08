@@ -1,7 +1,10 @@
-"""Regression tests for import concurrency and storage safeguards.
+"""Regression tests for import concurrency, storage safeguards, and CSV handling.
 
-1. Atomic repeat-import concurrency guard (TOCTOU race with real SQLite contention)
-2. WAL mode and busy_timeout enabled for SQLite concurrency
+1. elevation_gain_m in CORRECTABLE tuple (data integrity)
+2. Atomic repeat-import concurrency guard (TOCTOU race with real SQLite contention)
+3. CSV formula injection escaping tabs, newlines, and leading whitespace
+4. WAL mode and busy_timeout enabled for SQLite concurrency
+5. Date parser handles ISO timestamps with offsets and fractional seconds
 """
 import os
 import tempfile
@@ -12,21 +15,27 @@ from datetime import datetime, timezone
 import pytest
 from starlette.testclient import TestClient
 
-from runrank import api, store
+from runrank import api, store, strava_csv
 
 HDR = "Activity ID,Activity Date,Activity Type,Elapsed Time,Distance,Elapsed Time,Distance,Elevation Gain\n"
 
 
-def test_concurrent_duplicate_import_raises_409(tmp_path):
-    """Verify duplicate-import race through the real commit API under real SQLite contention.
+def test_elevation_gain_correction_is_applied_when_requested(con):
+    pid = store.create_participant(con, "Elev Runner", True, "synthetic")
+    row1 = '101,"Mar 1, 2024, 7:00:00 AM",Run,1500,5.00,1500,5000.0,50.0\n'
+    row2 = '101,"Mar 1, 2024, 7:00:00 AM",Run,1500,5.00,1500,5000.0,100.0\n'
+    store.import_file(con, pid, "a.csv", (HDR + row1).encode())
+    initial = con.execute("SELECT elevation_gain_m FROM activities WHERE source_activity_id = '101'").fetchone()[0]
+    assert initial == 50.0
 
-    Exercises contention inside store.import_file where Thread 1 holds the BEGIN IMMEDIATE
-    write lock while Thread 2 executes concurrently with an independent connection.
-    Verifies that one succeeds (201), the other returns HTTP 409 with duplicate_file error,
-    and the final database has exactly 1 completed import, 1 set of activity rows, and
-    no partial writes or orphan records.
-    Repeated across multiple fresh databases to verify stability.
-    """
+    imp = store.import_file(con, pid, "a.csv", (HDR + row2).encode(), apply_corrections=True)
+    status = tuple(con.execute("SELECT inserted, corrected, duplicates FROM imports WHERE id = ?", (imp,)).fetchone())
+    assert status == (0, 1, 0)
+    updated = con.execute("SELECT elevation_gain_m FROM activities WHERE source_activity_id = '101'").fetchone()[0]
+    assert updated == 100.0
+
+
+def test_concurrent_duplicate_import_raises_409(tmp_path):
     csv_data = (HDR + '101,"Mar 1, 2024, 7:00:00 AM",Run,1500,5.00,1500,5000.0,50.0\n').encode()
 
     for iter_idx in range(5):
@@ -110,6 +119,24 @@ def test_concurrent_duplicate_import_raises_409(tmp_path):
             check_con.close()
 
 
+def test_csv_formula_injection_sanitizes_leading_tabs_and_whitespace():
+    rows = [
+        ["1001", "2024-03-01T07:00:00Z", "\t=2+2", "Run", 5000.0, 1500.0, 1500.0, 300.0, 300.0, None, None, None, "unknown"],
+        ["1002", "2024-03-02T07:00:00Z", "  +cmd|' /C calc'!A0", "Run", 5000.0, 1500.0, 1500.0, 300.0, 300.0, None, None, None, "unknown"],
+        ["1003", "2024-03-03T07:00:00Z", "\r-1337", "Run", 5000.0, 1500.0, 1500.0, 300.0, 300.0, None, None, None, "unknown"],
+        ["1004", "2024-03-04T07:00:00Z", "@SUM(A1:A10)", "Run", 5000.0, 1500.0, 1500.0, 300.0, 300.0, None, None, None, "unknown"],
+    ]
+    cols = ["id", "start_utc", "name", "type", "distance_m", "elapsed_s", "moving_s", "pace_s_per_km",
+            "moving_pace_s_per_km", "avg_hr", "perceived_exertion", "elevation_gain_m", "effort"]
+    resp = api._csv(cols, rows, "test.csv")
+    body = resp.body.decode("utf-8")
+
+    assert "'\t=2+2" in body
+    assert "'  +cmd" in body
+    assert "'\r-1337" in body
+    assert "'@SUM(A1:A10)" in body
+
+
 def test_wal_mode_and_busy_timeout_enabled(tmp_path):
     db_path = str(tmp_path / "wal_test.sqlite")
     con = store.connect(db_path)
@@ -118,3 +145,11 @@ def test_wal_mode_and_busy_timeout_enabled(tmp_path):
     con.close()
     assert mode.lower() == "wal"
     assert timeout >= 5000
+
+
+def test_date_parser_handles_iso_with_offsets_and_milliseconds():
+    dt1 = strava_csv._date("2024-03-01T07:00:00+00:00")
+    assert dt1 == datetime(2024, 3, 1, 7, 0, 0, tzinfo=timezone.utc)
+
+    dt2 = strava_csv._date("2024-03-01T07:00:00.000Z")
+    assert dt2 == datetime(2024, 3, 1, 7, 0, 0, tzinfo=timezone.utc)
