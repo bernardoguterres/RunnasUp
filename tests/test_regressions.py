@@ -1,10 +1,12 @@
-"""Regression tests for import concurrency, storage safeguards, and CSV handling.
+"""Regression tests for import concurrency, storage safeguards, CSV handling, and MMR arithmetic.
 
 1. elevation_gain_m in CORRECTABLE tuple (data integrity)
 2. Atomic repeat-import concurrency guard (TOCTOU race with real SQLite contention)
 3. CSV formula injection escaping tabs, newlines, and leading whitespace
-4. WAL mode and busy_timeout enabled for SQLite concurrency
-5. Date parser handles ISO timestamps with offsets and fractional seconds
+4. Zero-distance activity handled in mmr.bands without ZeroDivisionError
+5. explain() does not contradict itself when evidence coverage improves
+6. WAL mode and busy_timeout enabled for SQLite concurrency
+7. Date parser handles ISO timestamps with offsets and fractional seconds
 """
 import os
 import tempfile
@@ -15,7 +17,7 @@ from datetime import datetime, timezone
 import pytest
 from starlette.testclient import TestClient
 
-from runrank import api, store, strava_csv
+from runrank import api, mmr, store, strava_csv
 
 HDR = "Activity ID,Activity Date,Activity Type,Elapsed Time,Distance,Elapsed Time,Distance,Elevation Gain\n"
 
@@ -135,6 +137,35 @@ def test_csv_formula_injection_sanitizes_leading_tabs_and_whitespace():
     assert "'  +cmd" in body
     assert "'\r-1337" in body
     assert "'@SUM(A1:A10)" in body
+
+
+def test_zero_distance_run_does_not_crash_bands():
+    now = datetime(2025, 6, 1, tzinfo=timezone.utc)
+    zero_obs = mmr.Obs("zero_run", now, "Run", 0.0, 100.0)
+    normal_obs = mmr.Obs("normal_run", now, "Run", 5000.0, 1500.0)
+    classified = [mmr.classify(zero_obs), mmr.classify(normal_obs)]
+
+    b = mmr.bands(classified, now)
+    assert len(b) > 0
+    under3 = next(x for x in b if "under 3 km" in x["label"])
+    assert under3["count"] == 0
+    assert under3["best_pace_s_per_km"] is None
+
+
+def test_coverage_change_does_not_claim_no_change():
+    t0 = datetime(2025, 1, 1, 7, tzinfo=timezone.utc)
+    r1 = mmr.classify(mmr.Obs("1", t0, "Run", 10000.0, 2700.0))
+    r2 = mmr.classify(mmr.Obs("2", t0, "Run", 10000.0, 2720.0))
+
+    e1 = mmr.estimate_at([r1], t0)
+    e2 = mmr.estimate_at([r1, r2], t0)
+    assert e1.status == "low"
+    assert e2.status == "medium"
+    assert e1.mmr == e2.mmr
+
+    reasons = mmr.explain(e1, e2)
+    assert not any("No change" in r for r in reasons)
+    assert any("Evidence coverage: low → medium" in r for r in reasons)
 
 
 def test_wal_mode_and_busy_timeout_enabled(tmp_path):

@@ -217,10 +217,10 @@ def explain(prev, cur, params=PARAMS):
                    "than recorded." % (s.key, cur.best_age_days, 100 * (cur.setter_aged_s / cur.setter.t10_s - 1)))
     if not out and abs(delta) > 1e-9:
         out.append("The estimate changed by %+.1f points as evidence aged (recency assumption)." % delta)
-    if not out:
-        out.append("No change: no new evidence beats the current estimate.")
     if prev.status != cur.status:
         out.append("Evidence coverage: %s → %s (%s)." % (prev.status, cur.status, cur.upper))
+    if not out:
+        out.append("No change: no new evidence beats the current estimate.")
     return out
 
 
@@ -277,14 +277,14 @@ def bands(classified, as_of, params=PARAMS):
                     "best_key": best.obs.key if best else None, "best_t10_s": best.t10_s if best else None,
                     "best_pace_s_per_km": best.obs.elapsed_s / best.obs.distance_m * 1000 if best else None})
     for label, test in (("over 42.5 km (ultra; not converted)", lambda d: d > params["max_m"]),
-                        ("under 3 km (not converted)", lambda d: d < params["min_m"])):
+                        ("under 3 km (not converted)", lambda d: 0 < d < params["min_m"])):
         cs = [c for c in recent if c.obs.activity_type in params["sports"] and test(c.obs.distance_m)
-              and not c.obs.excluded and c.obs.duplicate_of is None]
+              and c.obs.elapsed_s > 0 and not c.obs.excluded and c.obs.duplicate_of is None]
         fast = min(cs, key=lambda c: c.obs.elapsed_s / c.obs.distance_m) if cs else None
         out.append({"label": label, "converted": False, "count": len(cs),
                     "best_key": fast.obs.key if fast else None, "best_t10_s": None,
                     "best_pace_s_per_km": fast.obs.elapsed_s / fast.obs.distance_m * 1000 if fast else None,
-                    "longest_m": max(c.obs.distance_m for c in cs) if cs else None})
+                    "longest_m": max((c.obs.distance_m for c in cs), default=None)})
     return out
 
 
