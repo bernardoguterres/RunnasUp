@@ -42,4 +42,16 @@ describe("App shell", () => {
     await user.click(btn);
     expect(btn.getAttribute("aria-expanded")).toBe("true");
   });
+  it("restores focus to the Menu button when the mobile menu is dismissed with Escape", async () => {
+    const user = userEvent.setup();
+    mockFetch(baseHandlers([]));
+    renderApp("/does-not-exist");
+    await screen.findByText("Page not found");
+    const btn = screen.getByRole("button", { name: "Menu" });
+    await user.click(btn);
+    expect(btn.getAttribute("aria-expanded")).toBe("true");
+    await user.keyboard("{Escape}");
+    expect(btn.getAttribute("aria-expanded")).toBe("false");
+    expect(document.activeElement).toBe(btn);
+  });
 });

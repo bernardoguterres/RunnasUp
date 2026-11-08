@@ -327,7 +327,7 @@ function Explore({ meta }: { meta: LabMeta }) {
         </Notice>
       ) : null}
       {r.error ? <ErrorState error={r.error} onRetry={r.reload} /> : null}
-      {!r.data && !r.error ? <Loading label="Calculating…" /> : null}
+      {r.loading ? <Loading label="Calculating…" /> : null}
       {r.data ? (
         <>
           <dl className="metrics">
@@ -605,7 +605,7 @@ export function LabPage() {
         <span className="small muted"> (comparison uses the synthetic examples only)</span>
       </div>
       {meta.error ? <ErrorState error={meta.error} onRetry={meta.reload} /> : null}
-      {!meta.data && !meta.error ? <Loading /> : null}
+      {meta.loading ? <Loading /> : null}
       {meta.data && tab === "explore" ? <Explore meta={meta.data} /> : null}
       {meta.data && tab === "compare" ? <Compare /> : null}
       {meta.data ? (

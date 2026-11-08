@@ -13,13 +13,22 @@ from datetime import datetime, time, timezone
 
 from . import activity_rules, mmr, strava_csv
 
+class DuplicateFileError(Exception):
+    """Raised when an identical file has already been imported and confirm_repeat is False."""
+
+    def __init__(self, previous_import):
+        super().__init__("duplicate file")
+        self.previous_import = previous_import
+
+
+
 SCHEMA_VERSION = "5"
 SOURCE = "strava_activities_csv"
 DEFAULT_DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                           "data", "runrank.sqlite")
 EFFORTS = ("unknown", "easy", "moderate", "hard", "race")
 CORRECTABLE = ("start_utc", "activity_type", "name", "distance_m", "elapsed_s",
-               "moving_s", "avg_hr", "perceived_exertion")
+               "moving_s", "avg_hr", "perceived_exertion", "elevation_gain_m")
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -213,6 +222,8 @@ def connect(path=None):
     con = sqlite3.connect(path, isolation_level=None)   # explicit transactions below
     con.row_factory = sqlite3.Row
     con.execute("PRAGMA foreign_keys = ON")
+    con.execute("PRAGMA journal_mode = WAL")
+    con.execute("PRAGMA busy_timeout = 10000")
     con.executescript(SCHEMA)
     cols = [r["name"] for r in con.execute("PRAGMA table_info(participants)")]
     if "data_kind" not in cols:   # schema 2: participants created before it stay 'unlabelled'
@@ -292,7 +303,7 @@ def _same(a, b):
     return a == b
 
 
-def import_file(con, participant_id, filename, data, apply_corrections=False):
+def import_file(con, participant_id, filename, data, apply_corrections=False, confirm_repeat=True):
     """Import one uploaded file for one participant. Returns the imports row id.
 
     File-level problems record a 'file_rejected' import and store no rows.
@@ -313,6 +324,10 @@ def import_file(con, participant_id, filename, data, apply_corrections=False):
                               "failed", "file could not be read: %s: %s" % (type(exc).__name__, exc))
     try:
         with _tx(con):
+            if not confirm_repeat:
+                prev = completed_import_of(con, participant_id, sha)
+                if prev is not None:
+                    raise DuplicateFileError(prev)
             imp = con.execute(
                 "INSERT INTO imports(participant_id, filename, file_sha256, source_member, imported_utc,"
                 " apply_corrections, status, rows_total) VALUES (?, ?, ?, ?, ?, ?, 'completed', ?)",
@@ -333,6 +348,8 @@ def import_file(con, participant_id, filename, data, apply_corrections=False):
                                         counts["corrected"], counts["rejected"], imp))
             _recompute(con, participant_id, "import %d" % imp)
         return imp
+    except DuplicateFileError:
+        raise
     except Exception as exc:  # rolled back above; leave an audit record
         return _record_import(con, participant_id, filename, sha, member, started,
                               apply_corrections, "failed",
@@ -418,13 +435,12 @@ def _import_row(con, pid, imp, row, apply_corrections, seen_in_file):
         return "rejected", ("identity collision: Activity ID %s is already stored for another participant;"
                             " not imported (check the file belongs to this runner)" % sid)
     diffs = [f for f in CORRECTABLE if not _same(existing[f], v[f])]
+    if diffs == ["elevation_gain_m"] and existing["elevation_gain_m"] is None and v["elevation_gain_m"] is not None and not apply_corrections:
+        con.execute("UPDATE activities SET elevation_gain_m = ?, last_import_id = ? WHERE id = ?",
+                    (v["elevation_gain_m"], imp, existing["id"]))
+        return "duplicate", "identical to stored activity; missing elevation gain filled (display only)"
     if not diffs:
         con.execute("UPDATE activities SET last_import_id = ? WHERE id = ?", (imp, existing["id"]))
-        # elevation (display only) was not imported before schema 3: fill it once, never overwrite
-        if existing["elevation_gain_m"] is None and v["elevation_gain_m"] is not None:
-            con.execute("UPDATE activities SET elevation_gain_m = ? WHERE id = ?",
-                        (v["elevation_gain_m"], existing["id"]))
-            return "duplicate", "identical to stored activity; missing elevation gain filled (display only)"
         return "duplicate", "identical to stored activity; nothing changed"
     change = ", ".join("%s: %r -> %r" % (f, existing[f], v[f]) for f in diffs)
     if not apply_corrections:

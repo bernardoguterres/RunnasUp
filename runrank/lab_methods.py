@@ -489,7 +489,7 @@ def evaluate(method, acts, t, params=None, preps=None, confirmed=frozenset(), ke
     (an excluded recording still marks its duplicates); methods B-D receive inputs with exclusions removed."""
     p = check_params(method, params)
     if method == "A":
-        return _a(acts, t, frozenset(excluded), frozenset(keep_separate))
+        return _a(acts, t, frozenset(excluded), frozenset(keep_separate), preps=preps)
     preps = preps if preps is not None else prepare(acts, p, frozenset(keep_separate))
     if method == "B":
         return _b(preps, t, p, frozenset(confirmed))
@@ -511,8 +511,11 @@ def production_classified(acts, excluded=frozenset(), keep_separate=frozenset())
     return {lab_key[c.obs.key]: c for c in out}, lab_key
 
 
-def _a(acts, t, excluded=frozenset(), keep_separate=frozenset()):
-    cls, lab_key = production_classified(acts, excluded, keep_separate)
+def _a(acts, t, excluded=frozenset(), keep_separate=frozenset(), preps=None):
+    if preps is not None:
+        cls, lab_key = preps
+    else:
+        cls, lab_key = production_classified(acts, excluded, keep_separate)
     e = mmr.estimate_at(list(cls.values()), t)
     rows = {k: {"informative": c.informative, "reasons": list(c.reasons), "flags": list(c.flags),
                 "duplicate_of": lab_key.get(c.obs.duplicate_of) if c.obs.duplicate_of else None}
@@ -735,7 +738,10 @@ def _decayed(value, since, t, comp):
 
 def history(method, acts, end, params=None, step_days=14, confirmed=frozenset(), keep_separate=frozenset(),
             excluded=frozenset()):
-    preps = prepare(acts, params, frozenset(keep_separate)) if method != "A" else None
+    if method == "A":
+        preps = production_classified(acts, frozenset(excluded), frozenset(keep_separate))
+    else:
+        preps = prepare(acts, params, frozenset(keep_separate))
     starts = sorted({a.start for a in acts if a.start <= end and a.key not in excluded})
     if not starts:
         return []

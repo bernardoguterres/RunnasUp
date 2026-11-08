@@ -322,7 +322,13 @@ def create_app(db_path, demo_mode=False, database="custom", allowed_hosts=("127.
                 raise ApiError(409, "duplicate_file", "this exact file was already imported for this runner; "
                                                       "importing it again only reports duplicates",
                                previous_import=_import_record(con, prev))
-            imp_id = store.import_file(con, pid, name, data, flags["apply_corrections"])
+            try:
+                imp_id = store.import_file(con, pid, name, data, flags["apply_corrections"],
+                                           confirm_repeat=flags["confirm_repeat"])
+            except store.DuplicateFileError as exc:
+                raise ApiError(409, "duplicate_file", "this exact file was already imported for this runner; "
+                                                      "importing it again only reports duplicates",
+                               previous_import=_import_record(con, exc.previous_import))
             imp = con.execute("SELECT * FROM imports WHERE id = ?", (imp_id,)).fetchone()
             return JSONResponse({"import": _import_record(con, imp), "rows": _import_rows(con, imp_id)},
                                 status_code=201)
@@ -392,12 +398,19 @@ async def _json(request):
     return body
 
 
+def _is_formula(v):
+    if not isinstance(v, str):
+        return False
+    s = v.lstrip(" \t\r\n")
+    return bool(s and s[0] in ("=", "+", "-", "@", "|")) or (v and v[0] in ("\t", "\r", "\n"))
+
+
 def _csv(header, rows, filename):
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(header)
     # cells that a spreadsheet would evaluate as a formula are prefixed with an apostrophe
-    w.writerows([["'" + v if isinstance(v, str) and v[:1] in ("=", "+", "-", "@") else v for v in r]
+    w.writerows([["'" + v if _is_formula(v) else v for v in r]
                  for r in rows])
     return Response(buf.getvalue(), media_type="text/csv; charset=utf-8",
                     headers={"Content-Disposition": 'attachment; filename="%s"' % filename})

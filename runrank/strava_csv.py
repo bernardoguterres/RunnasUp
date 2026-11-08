@@ -115,6 +115,18 @@ EARLIEST = datetime(1990, 1, 1, tzinfo=timezone.utc)
 
 def _date(text):
     t = text.replace(" ", " ").replace("\xa0", " ").strip()
+    try:
+        dt = datetime.fromisoformat(t.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        else:
+            dt = dt.astimezone(timezone.utc)
+        if not EARLIEST <= dt <= datetime.now(timezone.utc) + timedelta(days=1):
+            raise ValueError("implausible Activity Date %r (before 1990 or in the future)" % text)
+        return dt
+    except ValueError as exc:
+        if "implausible" in str(exc):
+            raise
     for fmt in DATE_FORMATS:
         try:
             dt = datetime.strptime(t, fmt).replace(tzinfo=timezone.utc)

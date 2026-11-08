@@ -37,6 +37,7 @@ function Guidance() {
 
 function AddRunner({ onCreated }: { onCreated: (p: Participant) => void }) {
   const [open, setOpen] = useState(false);
+  const openBtnRef = useRef<HTMLButtonElement>(null);
   const [label, setLabel] = useState("");
   const [kind, setKind] = useState<"real" | "synthetic">("real");
   const [consent, setConsent] = useState(false);
@@ -45,6 +46,11 @@ function AddRunner({ onCreated }: { onCreated: (p: Participant) => void }) {
   const id = useId();
 
   const valid = label.trim().length > 0 && (kind === "synthetic" || consent);
+
+  function close() {
+    setOpen(false);
+    setTimeout(() => openBtnRef.current?.focus(), 0);
+  }
 
   async function submit(e: FormEvent) {
     e.preventDefault();
@@ -66,7 +72,7 @@ function AddRunner({ onCreated }: { onCreated: (p: Participant) => void }) {
 
   if (!open) {
     return (
-      <button type="button" className="btn btn--small" onClick={() => setOpen(true)} aria-expanded={false}>
+      <button ref={openBtnRef} type="button" className="btn btn--small" onClick={() => setOpen(true)} aria-expanded={false}>
         <span aria-hidden="true">+ </span>Add runner
       </button>
     );
@@ -104,7 +110,7 @@ function AddRunner({ onCreated }: { onCreated: (p: Participant) => void }) {
         <button type="submit" className="btn btn--primary" disabled={!valid || busy}>
           {busy ? "Adding…" : "Add runner"}
         </button>
-        <button type="button" className="btn" onClick={() => setOpen(false)}>
+        <button type="button" className="btn" onClick={close}>
           Cancel
         </button>
       </div>

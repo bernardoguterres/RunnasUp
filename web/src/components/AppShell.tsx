@@ -116,6 +116,7 @@ export function pageTitle(pathname: string): string {
 
 export function AppShell() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
   const navId = useId();
   const { health } = useAppState();
@@ -126,7 +127,12 @@ export function AppShell() {
 
   useEffect(() => {
     if (!menuOpen) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        menuBtnRef.current?.focus();
+      }
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen]);
@@ -170,10 +176,10 @@ export function AppShell() {
           </span>
         </div>
       </aside>
-      {menuOpen ? <div className="scrim" onClick={() => setMenuOpen(false)} aria-hidden="true" /> : null}
+      {menuOpen ? <div className="scrim" onClick={() => { setMenuOpen(false); menuBtnRef.current?.focus(); }} aria-hidden="true" /> : null}
       <div className="app__main">
         <header className="topbar">
-          <button type="button" className="btn menu-btn" aria-expanded={menuOpen} aria-controls={navId}
+          <button ref={menuBtnRef} type="button" className="btn menu-btn" aria-expanded={menuOpen} aria-controls={navId}
             onClick={() => setMenuOpen((o) => !o)}>
             Menu
           </button>

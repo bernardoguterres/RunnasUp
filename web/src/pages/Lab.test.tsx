@@ -181,4 +181,17 @@ describe("Ratings Lab", () => {
     expect(p2.textContent).toContain("Removed activity ids: 1, 3.");
     expect(p2.textContent).toMatch(/speed 1924 → 1814/);
   });
+  it("does not get stuck in Calculating loading state when database source has 0 runners", async () => {
+    const user = userEvent.setup();
+    const calls: URL[] = [];
+    mockFetch(baseHandlers([]), (url: URL) => {
+      if (url.pathname === "/api/lab/meta") return json(fx.meta);
+      if (url.pathname === "/api/lab/db/runners") return json({ runners: [] });
+      return lab(calls)(url);
+    });
+    renderApp("/lab");
+    await user.click(await screen.findByRole("radio", { name: /Histories in the currently selected application database/ }));
+    expect(await screen.findByText("This database has no runners yet. Add a runner and import an export on the Import page first.")).toBeTruthy();
+    expect(screen.queryByText("Calculating…")).toBeNull();
+  });
 });
